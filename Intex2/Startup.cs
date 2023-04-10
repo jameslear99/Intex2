@@ -51,7 +51,7 @@ namespace Intex2
                 options.Password.RequireNonAlphanumeric = true;
                 options.Password.RequireUppercase = true;
                 options.Password.RequiredLength = 8;
-                options.Passowrd.RequiredUniqueChars = 1;
+                options.Password.RequiredUniqueChars = 1;
             });
         }
 
