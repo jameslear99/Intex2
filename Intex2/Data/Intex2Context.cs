@@ -63,14 +63,14 @@ namespace Intex2.Data
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseNpgsql("Host=localhost; Database=Intex2;Username=postgres;Password=admin123");
-                /*var config = new ConfigurationBuilder()
+                // optionsBuilder.UseNpgsql("Host=localhost; Database=Intex2;Username=postgres;Password=admin123");
+                var config = new ConfigurationBuilder()
                     .AddUserSecrets<Startup>()
                     .Build();
 
                 string connectionString = config.GetConnectionString("MyDatabase");
 
-                optionsBuilder.UseNpgsql(connectionString);*/
+                optionsBuilder.UseNpgsql(connectionString);
             }
         }
 
