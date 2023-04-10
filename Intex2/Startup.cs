@@ -83,7 +83,6 @@ namespace Intex2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             // Add the Content-Security-Policy header
             app.Use(async (ctx, next) =>
             {
