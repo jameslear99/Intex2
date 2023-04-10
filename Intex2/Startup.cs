@@ -35,6 +35,15 @@ namespace Intex2
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            // Add HSTS configuration
+            services.AddHsts(options =>
+            {
+                options.Preload = true;
+                options.IncludeSubDomains = true;
+                options.MaxAge = TimeSpan.FromDays(365);
+            });
+        }
+
             // Password authentication stuff
             services.Configure<IdentityOptions>(options =>
                 {
@@ -59,6 +68,8 @@ namespace Intex2
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+
+                // Enable HSTS in production environment
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
