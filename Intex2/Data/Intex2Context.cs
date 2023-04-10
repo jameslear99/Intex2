@@ -59,16 +59,18 @@ namespace Intex2.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             if (!optionsBuilder.IsConfigured)
             {
-                // optionsBuilder.UseNpgsql("Host=localhost; Database=Intex2;Username=postgres;Password=admin123");
-                var config = new ConfigurationBuilder()
-                .AddUserSecrets<Startup>()
-                .Build();
+
+                optionsBuilder.UseNpgsql("Host=localhost; Database=Intex2;Username=postgres;Password=admin123");
+                /*var config = new ConfigurationBuilder()
+                    .AddUserSecrets<Startup>()
+                    .Build();
 
                 string connectionString = config.GetConnectionString("MyDatabase");
 
-                optionsBuilder.UseNpgsql(connectionString);
+                optionsBuilder.UseNpgsql(connectionString);*/
             }
         }
 
@@ -328,7 +330,7 @@ namespace Intex2.Data
 
                 entity.Property(e => e.Observations)
                     .HasColumnName("observations")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Orbitedge)
                     .HasColumnName("orbitedge")
@@ -385,7 +387,7 @@ namespace Intex2.Data
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Link)
                     .HasColumnName("link")
@@ -821,23 +823,23 @@ namespace Intex2.Data
 
                 entity.Property(e => e.Author)
                     .HasColumnName("author")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Title)
                     .HasColumnName("title")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Url)
                     .HasColumnName("url")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Urltoimage)
                     .HasColumnName("urltoimage")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
             });
 
             modelBuilder.Entity<Photodata>(entity =>
@@ -967,7 +969,7 @@ namespace Intex2.Data
 
                 entity.Property(e => e.Bio)
                     .HasColumnName("bio")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Membername)
                     .HasColumnName("membername")
@@ -988,7 +990,7 @@ namespace Intex2.Data
 
                 entity.Property(e => e.Description)
                     .HasColumnName("description")
-                    .HasColumnType("character varying");
+                    .HasMaxLength(50000);
 
                 entity.Property(e => e.Direction)
                     .HasColumnName("direction")

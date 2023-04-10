@@ -1,4 +1,5 @@
 using Intex2.Data;
+using Intex2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +36,10 @@ namespace Intex2
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+
+            //pagination services etc
+            services.AddScoped<IMummyProjectRepository, EFMummyProjectRepository>();
 
             //Add cookie notifications
             services.Configure<CookiePolicyOptions>(options =>
@@ -70,7 +76,7 @@ namespace Intex2
             string connectionString = config.GetConnectionString("MyDatabase");
 
             services.AddDbContext<Intex2Context>(options =>
-                options.UseSqlServer(connectionString));
+                options.UseNpgsql(connectionString));
         }
 
 
