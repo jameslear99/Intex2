@@ -4,21 +4,24 @@
 
 @model MummyViewModel
 
-<div class="card card-outline-primary m-2 p-2">
-    <div class="bg-light p-1">
-        <h4>Title Something</h4>
-        <span class="badge bg-info" style="float:right">
-            For if we want a badge
-        </span>
-    </div>
+<div>
 
     @foreach (Burialmain m in Model.Mummies)
     {
-        <ul>
-            <li>@m.Id</li>
-            <li>@m.Sex</li>
-            <li>@m.Depth</li>
-        </ul>
+        <div class="card card-outline-primary m-2 p-2">
+            <div class="bg-light p-1">
+                <h4>Title Something</h4>
+            </div>
+            <div>
+                <ul>
+                    <li>@m.Id</li>
+                    <li>@m.Sex</li>
+                    <li>@m.Depth</li>
+                </ul>
+            </div>
+            
+        </div>
+        
     }
     <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
          page-class="btn" page-class-normal="btn-outline-dark"
