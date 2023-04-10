@@ -10,7 +10,7 @@ namespace Intex2.Models
     {
         private Intex2Context context { get; set; }
         public EFMummyProjectRepository(Intex2Context temp) => context = temp;
-        public IQueryable<Burialmain> Mummies => context.Burialmain;
+        public IQueryable<Burialmain> Mummies => context.Burialmain ;
 
     }
 }

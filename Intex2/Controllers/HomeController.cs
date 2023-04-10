@@ -17,7 +17,7 @@ namespace Intex2.Controllers
 
 
 
-        public IActionResult Index( int pageNum = 1)
+        public IActionResult DisplayList( int pageNum = 1)
         {
             int pageSize = 10;
 
@@ -37,14 +37,14 @@ namespace Intex2.Controllers
             };
 
 
-            return View();
+            return View(x);
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
-        public IActionResult DisplayList()
+        public IActionResult Index()
         {
             return View();
         }
