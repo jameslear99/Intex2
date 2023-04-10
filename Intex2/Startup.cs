@@ -1,4 +1,5 @@
 using Intex2.Data;
+using Intex2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +35,10 @@ namespace Intex2
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+
+            //pagination services etc
+            services.AddScoped<IMummyProjectRepository, EFMummyProjectRepository>();
 
             //Add cookie notifications
             services.Configure<CookiePolicyOptions>(options =>

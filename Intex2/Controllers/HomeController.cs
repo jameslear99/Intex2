@@ -1,4 +1,5 @@
 ﻿using Intex2.Models;
+using Intex2.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -11,15 +12,31 @@ namespace Intex2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public IMummyProjectRepository repo;
+        public HomeController(IMummyProjectRepository temp) => repo = temp;
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
-        public IActionResult Index()
+
+        public IActionResult Index( int pageNum = 1)
         {
+            int pageSize = 10;
+
+            //this is how we pass multiple things into the index page so we can access both the db and pagination info
+            var x = new MummyViewModel
+            {
+                Mummies = repo.Mummies
+                .Skip((pageNum - 1) * pageSize)
+                .Take(pageSize),
+
+                PageInfo = new PageInfo
+                {
+                    TotalNumMummy = repo.Mummies.Count(),
+                    MummyPerPage = pageSize,
+                    CurrentPage = pageNum
+                }
+            };
+
+
             return View();
         }
 
