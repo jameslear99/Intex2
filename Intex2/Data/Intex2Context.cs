@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 using Microsoft.EntityFrameworkCore.Metadata;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
@@ -59,7 +61,13 @@ namespace Intex2.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseNpgsql("Host=localhost; Database=Intex2;Username=postgres;Password=admin123");
+                var config = new ConfigurationBuilder()
+                    .AddUserSecrets<Startup>()
+                    .Build();
+
+                string connectionString = config.GetConnectionString("MyDatabase");
+
+                optionsBuilder.UseNpgsql(connectionString);
             }
         }
 
