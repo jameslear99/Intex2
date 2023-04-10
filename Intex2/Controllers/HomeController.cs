@@ -27,7 +27,7 @@ namespace Intex2.Controllers
         {
             return View();
         }
-        public IActionResult SummaryRecords()
+        public IActionResult DisplayList()
         {
             return View();
         }
