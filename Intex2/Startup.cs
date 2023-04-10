@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,7 +68,7 @@ namespace Intex2
                 options.Password.RequiredLength = 8;
                 options.Password.RequiredUniqueChars = 1;
             });
-/*
+
             var config = new ConfigurationBuilder()
             .AddUserSecrets<Startup>()
             .Build();
@@ -75,7 +76,7 @@ namespace Intex2
             string connectionString = config.GetConnectionString("MyDatabase");
 
             services.AddDbContext<Intex2Context>(options =>
-                options.UseSqlServer(connectionString));*/
+                options.UseNpgsql(connectionString));
         }
 
 
