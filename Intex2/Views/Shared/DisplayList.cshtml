@@ -2,7 +2,7 @@
 
 }
 
-@model Mummy
+@model MummyViewModel
 
 <div class="card card-outline-primary m-2 p-2">
     <div class="bg-light p-1">
@@ -13,9 +13,9 @@
     </div>
 
     <ul>
-        <li>List: </li>
-        <li>Something: </li>
-        <li>Another thing</li>
+        <li>@Model.Id</li>
+        <li>@Model.Sex</li>
+        <li>@Model.Depth</li>
     </ul>
 
     
