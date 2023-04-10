@@ -33,6 +33,14 @@ namespace Intex2
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            //Add cookie notifications
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
             services.AddRazorPages();
 
             // Add HSTS configuration
@@ -51,7 +59,7 @@ namespace Intex2
                 options.Password.RequireNonAlphanumeric = true;
                 options.Password.RequireUppercase = true;
                 options.Password.RequiredLength = 8;
-                options.Passowrd.RequiredUniqueChars = 1;
+                options.Password.RequiredUniqueChars = 1;
             });
         }
 
@@ -74,6 +82,7 @@ namespace Intex2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
 
             app.UseRouting();
 
