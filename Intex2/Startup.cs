@@ -1,6 +1,7 @@
 using Intex2.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
@@ -82,6 +83,13 @@ namespace Intex2
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            // Add the Content-Security-Policy header
+            app.Use(async (ctx, next) =>
+            {
+                ctx.Response.Headers.Add("Content-Security-Policy", "default-src 'self'");
+                await next();
+            });
+
             app.UseCookiePolicy();
 
             app.UseRouting();
