@@ -13,6 +13,7 @@ namespace Intex2.Models
         public EFMummyProjectRepository(Intex2Context temp) => context = temp;
         public IQueryable<Burialmain> Mummies => context.Burialmain;
         public IQueryable<Textile> Textiles => context.Textile;
+        public IQueryable<BurialmainTextile> BridgeTable => context.BurialmainTextile;
         public IEnumerable<Burialmain> GetAll()
         {
             return context.Burialmain.ToList();

@@ -1,0 +1,22 @@
+﻿@{
+}
+@model Textile
+    <div class="card card-outline-primary m-2 p-2">
+        <div class="bg-light p-1">
+            <h4>Title Something</h4>
+        </div>
+        <div>
+            @if (Model == null)
+            {
+                <p>No Textile to show</p>
+            }
+            else
+            {
+            <ul>
+                <li>@Model.Locale</li>
+                <li></li>
+                <li></li>
+            </ul>
+            }
+        </div>
+    </div>

@@ -36,6 +36,11 @@
                         </form>
                     </li>
                 </ul>
+@*                <form method="get" asp-controller="Home" asp-action="Textile">
+                    <input type="hidden" name="Id" asp-route-Id="@m.Id"/>
+                    <button type="submit" class="btn btn-sm">View Associated Textile</button>
+                </form>*@
+                <a asp-controller="Home" asp-action="Textile" asp-route-Id="@m.Id">View Associated Textile</a>
             </div>
         </div>
         
@@ -44,4 +49,3 @@
          page-class="btn" page-class-normal="btn-outline-dark"
          page-class-selected="btn-primary" class="btn-group pull-right m-1 pagecenter"></div>
 </div>
-

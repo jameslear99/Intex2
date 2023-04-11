@@ -14,6 +14,7 @@ namespace Intex2.Models
         void UpdateRecord(Burialmain record);
         void DeleteRecord(Burialmain record);
         IQueryable<Textile> Textiles { get; }
+        IQueryable<BurialmainTextile> BridgeTable { get; }
         IEnumerable<Textile> GetAllTextile();
         Textile GetTextileById(int id);
         void AddRecord(Textile record);
