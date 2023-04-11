@@ -1,6 +1,7 @@
 ﻿using Intex2.Models;
 using Intex2.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Intex2.Data;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,11 @@ namespace Intex2.Controllers
             return View();
         }
         public IActionResult Unsupervised()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult BurialmainForm(Burialmain record)
         {
             return View();
         }
