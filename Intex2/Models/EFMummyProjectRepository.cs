@@ -61,5 +61,15 @@ namespace Intex2.Models
             context.Textile.Remove(record);
             context.SaveChanges();
         }
+
+        public void AddRecord(AddEntry entry)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveChanges()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

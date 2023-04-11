@@ -1,27 +1,25 @@
 ﻿@{
 }
 
-@model MummyViewModel
+@model Intex2.Data.Burialmain
 
 <h1>Add an Entry</h1>
 <br /><br />
 <div class="grid-container form">
     <form method="post">
-        <!--
-      <div asp-validation-summary="All"></div>
-    <input asp-for="Id" type="hidden" />
-    -->
+        <div asp-validation-summary="All"></div>
+        <input asp-for="Id" type="hidden" />
         <div class="container bg-light rounded">
             <fieldset class="form-group ">
                 <legend>Burial Information</legend>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label asp-for="Mummies.FirstOrDefault().Burialid">Burial Id:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Burialid" class="form-control" />
+                        <label asp-for="Burialid">Burial Id:</label>
+                        <input asp-for="Burialid" class="form-control" />
                     </div>
                     <div class="form-group col-md-6">
-                        <label asp-for="Mummies.FirstOrDefault().Burialnumber">Burial Number:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Burialnumber" class="form-control" />
+                        <label asp-for="Burialnumber">Burial Number:</label>
+                        <input asp-for="Burialnumber" class="form-control" />
                     </div>
                 </div>
             </fieldset>
@@ -32,34 +30,34 @@
                 <legend>Mummy Information: General</legend>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Sex">Sex:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Sex" class="form-control" />
+                        <label asp-for="Sex">Sex:</label>
+                        <input asp-for="Sex" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Haircolor">Haircolor:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Haircolor" class="form-control" />
+                        <label asp-for="Haircolor">Haircolor:</label>
+                        <input asp-for="Haircolor" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Hair">Hair:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Hair" class="form-control" />
+                        <label asp-for="Hair">Hair:</label>
+                        <input asp-for="Hair" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Ageatdeath">Ageatdeath:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Ageatdeath" class="form-control" />
+                        <label asp-for="Ageatdeath">Ageatdeath:</label>
+                        <input asp-for="Ageatdeath" class="form-control" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
-                        <label asp-for="Mummies.FirstOrDefault().Adultsubadult">Adultsubadult:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Adultsubadult" class="form-control" />
+                        <label asp-for="Adultsubadult">Adultsubadult:</label>
+                        <input asp-for="Adultsubadult" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-4">
-                        <label asp-for="Mummies.FirstOrDefault().Facebundles">Facebundles:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Facebundles" class="form-control" />
+                        <label asp-for="Facebundles">Facebundles:</label>
+                        <input asp-for="Facebundles" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-4">
@@ -76,23 +74,23 @@
                 <legend>Mummy Information: General</legend>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Preservation">Preservation:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Preservation" class="form-control" />
+                        <label asp-for="Preservation">Preservation:</label>
+                        <input asp-for="Preservation" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Fieldbookpage">Fieldbookpage:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Fieldbookpage" class="form-control" />
+                        <label asp-for="Fieldbookpage">Fieldbookpage:</label>
+                        <input asp-for="Fieldbookpage" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Goods">Goods:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Goods" class="form-control" />
+                        <label asp-for="Goods">Goods:</label>
+                        <input asp-for="Goods" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Text">Text:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Text" class="form-control" />
+                        <label asp-for="Text">Text:</label>
+                        <input asp-for="Text" class="form-control" />
                     </div>
                 </div>
             </fieldset>
@@ -103,18 +101,18 @@
                 <legend>Location/Geography</legend>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Area">Area:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Area" class="form-control" /><br />
+                        <label asp-for="Area">Area:</label>
+                        <input asp-for="Area" class="form-control" /><br />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Headdirection">Head Direction:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Headdirection" class="form-control" /><br />
+                        <label asp-for="Headdirection">Head Direction:</label>
+                        <input asp-for="Headdirection" class="form-control" /><br />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Depth">Depth:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Depth" class="form-control" /><br />
+                        <label asp-for="Depth">Depth:</label>
+                        <input asp-for="Depth" class="form-control" /><br />
                     </div>
 
                     <div class="form-group col-md-3">
@@ -124,13 +122,13 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Northsouth">Northsouth:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Northsouth" class="form-control" /><br />
+                        <label asp-for="Northsouth">Northsouth:</label>
+                        <input asp-for="Northsouth" class="form-control" /><br />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Eastwest">Eastwest:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Eastwest" class="form-control" /><br />
+                        <label asp-for="Eastwest">Eastwest:</label>
+                        <input asp-for="Eastwest" class="form-control" /><br />
                     </div>
 
                     <div class="form-group col-md-3">
@@ -141,34 +139,34 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Westtohead">Westtohead:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Westtohead" class="form-control" />
+                        <label asp-for="Westtohead">Westtohead:</label>
+                        <input asp-for="Westtohead" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Southtohead">Southtohead:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Southtohead" class="form-control" />
+                        <label asp-for="Southtohead">Southtohead:</label>
+                        <input asp-for="Southtohead" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Westtofeet">Westtofeet:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Westtofeet" class="form-control" />
+                        <label asp-for="Westtofeet">Westtofeet:</label>
+                        <input asp-for="Westtofeet" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Southtofeet">Southtofeet:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Southtofeet" class="form-control" />
+                        <label asp-for="Southtofeet">Southtofeet:</label>
+                        <input asp-for="Southtofeet" class="form-control" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Squarenorthsouth">Squarenorthsouth:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Squarenorthsouth" class="form-control" />
+                        <label asp-for="Squarenorthsouth">Squarenorthsouth:</label>
+                        <input asp-for="Squarenorthsouth" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Squareeastwest">Squareeastwest:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Squareeastwest" class="form-control" />
+                        <label asp-for="Squareeastwest">Squareeastwest:</label>
+                        <input asp-for="Squareeastwest" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
@@ -189,51 +187,51 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Fieldbookexcavationyear">Fieldbookexcavationyear:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Fieldbookexcavationyear" class="form-control" />
+                        <label asp-for="Fieldbookexcavationyear">Fieldbookexcavationyear:</label>
+                        <input asp-for="Fieldbookexcavationyear" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Shaftnumber">Shaftnumber:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Shaftnumber" class="form-control" />
+                        <label asp-for="Shaftnumber">Shaftnumber:</label>
+                        <input asp-for="Shaftnumber" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Clusternumber">Clusternumber:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Clusternumber" class="form-control" />
+                        <label asp-for="Clusternumber">Clusternumber:</label>
+                        <input asp-for="Clusternumber" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Excavationrecorder">Excavationrecorder:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Excavationrecorder" class="form-control" />
+                        <label asp-for="Excavationrecorder">Excavationrecorder:</label>
+                        <input asp-for="Excavationrecorder" class="form-control" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Samplescollected">Samplescollected:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Samplescollected" class="form-control" />
+                        <label asp-for="Samplescollected">Samplescollected:</label>
+                        <input asp-for="Samplescollected" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Wrapping">Wrapping:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Wrapping" class="form-control" />
+                        <label asp-for="Wrapping">Wrapping:</label>
+                        <input asp-for="Wrapping" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Length">Length:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Length" class="form-control" />
+                        <label asp-for="Length">Length:</label>
+                        <input asp-for="Length" class="form-control" />
                     </div>
 
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Burialmaterials">Burialmaterials:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Burialmaterials" class="form-control" />
+                        <label asp-for="Burialmaterials">Burialmaterials:</label>
+                        <input asp-for="Burialmaterials" class="form-control" />
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label asp-for="Mummies.FirstOrDefault().Dataexpertinitials">Dataexpertinitials:</label>
-                        <input asp-for="Mummies.FirstOrDefault().Dataexpertinitials" class="form-control" /><br />
+                        <label asp-for="Dataexpertinitials">Dataexpertinitials:</label>
+                        <input asp-for="Dataexpertinitials" class="form-control" /><br />
                     </div>
 
                     <div class="form-group col-md-3">
@@ -251,72 +249,73 @@
             </fieldset>
         </div>
         <br />
+        <!--X
+            <div class="container bg-light rounded">
+                <fieldset class="form-group">
+                    <legend>Textile Information</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Locale">Locale:</label>
+                            <input asp-for="Locale" class="form-control" />
+                        </div>
 
-        <div class="container bg-light rounded">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Textileid">Textileid:</label>
+                            <input asp-for="Textiles.FirstOrDefault().Textileid" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Textiles.FirstOrDefault().Description">Description:</label>
+                            <input asp-for="Textiles.FirstOrDefault().Description" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Textiles.FirstOrDefault().Burialnumber">Burialnumber:</label>
+                            <input asp-for="Textiles.FirstOrDefault().Burialnumber" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Textiles.FirstOrDefault().Estimatedperiod">Estimatedperiod:</label>
+                            <input asp-for="Textiles.FirstOrDefault().Estimatedperiod" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Textiles.FirstOrDefault().Sampledate">Sampledate:</label>
+                            <input asp-for="Textiles.FirstOrDefault().Sampledate" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Textiles.FirstOrDefault().Photographeddate">Photographeddate:</label>
+                            <input asp-for="Textiles.FirstOrDefault().Photographeddate" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Textiles.FirstOrDefault().Direction">Direction:</label>
+                            <input asp-for="Textiles.FirstOrDefault().Direction" class="form-control" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+                -->
+            <br />
             <fieldset class="form-group">
-                <legend>Textile Information</legend>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Locale">Locale:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Locale" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Textileid">Textileid:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Textileid" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Description">Description:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Description" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Burialnumber">Burialnumber:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Burialnumber" class="form-control" />
-                    </div>
+                <legend>Upload Images</legend>
+                <div class="form-group col-md-3">
+                    <label asp-for="Photos">Photos:</label>
+                    <input asp-for="Photos" type="file" name="image" class="form-control" />
                 </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Estimatedperiod">Estimatedperiod:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Estimatedperiod" class="form-control" />
-                    </div>
+                <div class="form-group col-md-3">
+                    <input type="submit" value="Upload" />
+                </div>
+                <div class="form-group col-md-3">
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Sampledate">Sampledate:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Sampledate" class="form-control" />
-                    </div>
+                </div>
+                <div class="form-group col-md-3">
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Photographeddate">Photographeddate:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Photographeddate" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Textiles.FirstOrDefault().Direction">Direction:</label>
-                        <input asp-for="Textiles.FirstOrDefault().Direction" class="form-control" />
-                    </div>
                 </div>
             </fieldset>
-        </div>
-        <br />
-        <fieldset class="form-group">
-            <legend>Upload Images</legend>
-            <div class="form-group col-md-3">
-                <label asp-for="Mummies.FirstOrDefault().Photos">Photos:</label>
-                <input asp-for="Mummies.FirstOrDefault().Photos" type="file" name="image" class="form-control" />
-            </div>
-            <div class="form-group col-md-3">
-                <input type="submit" value="Upload" />
-            </div>
-            <div class="form-group col-md-3">
-
-            </div>
-            <div class="form-group col-md-3">
-
-            </div>
-        </fieldset>
-        <br /><br />
-        <button type="submit" class="btn btn-primary btn-large">Submit Entry</button>
-    </form>
-</div>
+            <br /><br />
+            <button type="submit" class="btn btn-primary btn-large">Submit Entry</button>
+        </form>
+    </div>

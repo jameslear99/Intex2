@@ -20,5 +20,7 @@ namespace Intex2.Models
         void AddRecord(Textile record);
         void UpdateRecord(Textile record);
         void DeleteRecord(Textile record);
+        void AddRecord(AddEntry entry);
+        void SaveChanges();
     }
 }
