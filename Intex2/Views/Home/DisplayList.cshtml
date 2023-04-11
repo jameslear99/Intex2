@@ -7,8 +7,10 @@
 <div>
 
     @foreach (Burialmain m in Model.Mummies)
+    { 
+    @foreach (BurialmainTextile bt in Model.BridgeTable)
     {
-        @if (Model.BridgeTable != null && Model.BridgeTable.Any(bt => bt.MainBurialmainid == m.Id))
+    @foreach (Textile t in Model.Textiles)
         {
             <div class="card card-outline-primary m-2 p-2">
                 <div class="bg-light p-1">
@@ -19,31 +21,21 @@
                         <li>@m.Id</li>
                         <li>@m.Sex</li>
                         <li>@m.Depth</li>
-
-                        @if (Model.BridgeTable != null && Model.BridgeTable.Any(bt => bt.MainBurialmainid == m.Id))
+                        @if (bt != null && (bt.MainBurialmainid == m.Id))
                         {
-
-                            @foreach (var bt in Model.BridgeTable.Where(bt => bt.MainBurialmainid == m.Id))
-                            {
-                                var textile = Model.Textiles.Single(t => t.Id == bt.MainTextileid);
-                                if (textile != null)
-                                {
-
-                                    <li>Textile Id: @textile.Id</li>
-                                    <li>Description: @textile.Description</li>
-                                    <li>Locale: @textile.Locale</li>
-
-                                }
-                            }
-
-
+                        @if (t != null && (t.Id == bt.MainTextileid))
+                        {
+                                    <li>Textile Id: @t.Id</li>
+                                    <li>Description: @t.Description</li>
+                                    <li>Locale: @t.Locale</li>
                         }
-                    </ul>
+                        }
+                        </ul>
                 </div>
             </div>
         }
-}
-
+        }
+        }
 
     <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
          page-class="btn" page-class-normal="btn-outline-dark"
