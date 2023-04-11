@@ -9,10 +9,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar nav-pills navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <!--Add Cookie Notification-->
-                <partial name="_CookieConsentPartial" />
+
 
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Intex2</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -48,6 +47,9 @@
         </main>
     </div>
 
+    <!--Add Cookie Notification-->
+    <partial name="_CookieConsentPartial" />
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - Intex2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -58,8 +60,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 
-    <div class="modal-footer">
-        <p>Here is our footer information</p>
-    </div>
 </body>
 </html>
