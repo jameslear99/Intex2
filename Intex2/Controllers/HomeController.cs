@@ -21,27 +21,53 @@ namespace Intex2.Controllers
 
 
         
-        public IActionResult DisplayList( int pageNum = 1)
+        public IActionResult DisplayList( int depth, int pageNum = 1)
         {
             int pageSize = 100;
 
-            //this is how we pass multiple things into the index page so we can access both the db and pagination info
-            var x = new MummyViewModel
+
+            try 
             {
-                Mummies = repo.Mummies
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize),
 
-                PageInfo = new PageInfo
+                //this is how we pass multiple things into the index page so we can access both the db and pagination info
+                var x = new MummyViewModel
                 {
-                    TotalNumMummy = repo.Mummies.Count(),
-                    MummyPerPage = pageSize,
-                    CurrentPage = pageNum
-                }
-            };
+                    Mummies = repo.Mummies
+                    .Where(b => Convert.ToDecimal(b.Depth)< Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) < (Convert.ToDecimal(depth) - 1) || depth == null)
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize),
 
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumMummy = repo.Mummies.Count(),
+                        MummyPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
+            
 
             return View(x);
+            }
+            catch 
+            {
+                var x = new MummyViewModel
+                {
+                    Mummies = repo.Mummies
+                    .Where(b => b.Depth == depth || depth == null)
+                    .Skip((pageNum - 1) * pageSize)
+                    .Take(pageSize),
+
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumMummy = repo.Mummies.Count(),
+                        MummyPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
+
+
+                return View(x);
+            }
         }
         [HttpGet]
         public IActionResult Details(long Id)
