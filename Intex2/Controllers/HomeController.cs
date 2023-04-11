@@ -58,7 +58,7 @@ namespace Intex2.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult AddEntry()
+        public IActionResult AddEntry(int id)
         {
             var viewModel = new MummyViewModel
             {
