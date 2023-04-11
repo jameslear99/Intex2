@@ -1,0 +1,25 @@
+﻿@{
+}
+
+@model Intex2.Data.Burialmain
+
+<h1>Add an Entry</h1>
+<div calss="grid-container form">
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <input asp-for="Id" type="hidden" />
+
+        <label asp-for="Headdirection">Head Direction:</label>
+        <input asp-for="Headdirection" /><br />
+
+        <label asp-for="Sex">Sex:</label>
+        <input asp-for="Sex" /><br />
+
+        <label asp-for="">Mummy:</label>
+        <input asp-for="" /><br />
+
+        <!--Put the textiles drop down here-->
+
+        <button type="submit">Submit Entry</button>
+    </form>
+</div>

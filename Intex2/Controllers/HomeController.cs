@@ -53,6 +53,10 @@ namespace Intex2.Controllers
         {
             return View();
         }
+        public IActionResult AddEntry()
+        {
+            return View();
+        }
         public IActionResult Unsupervised()
         {
             return View();
