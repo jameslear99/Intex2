@@ -53,18 +53,19 @@ namespace Intex2.Controllers
         {
             return View();
         }
-        public IActionResult AddEntry()
-        {
-            return View();
-        }
         public IActionResult Unsupervised()
         {
             return View();
         }
         [HttpGet]
-        public IActionResult AddEntry(int id)
+        public IActionResult AddEntry()
         {
-            return View();
+            var viewModel = new MummyViewModel
+            {
+                Mummies = repo.Mummies,
+                Textiles = repo.Textiles
+            };
+            return View(viewModel);
         }
         [HttpPost]
         public IActionResult AddEntry(Burialmain record)
