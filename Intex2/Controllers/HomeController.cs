@@ -58,10 +58,44 @@ namespace Intex2.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult BurialmainForm(Burialmain record)
+        public IActionResult AddEntry(int id)
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult AddEntry(Burialmain record)
+        {
+            repo.AddRecord(record);
+            return RedirectToAction("DisplayList");
+        }
+        [HttpGet]
+        public IActionResult EditBurialmain(int id)
+        {
+            var record = repo.GetById(id);
+            return View(record);
+        }
+        [HttpPost]
+        public IActionResult EditBurialmain(Burialmain record)
+        {
+            repo.UpdateRecord(record);
+            return RedirectToAction("DisplayList");
+        }
+        [HttpGet]
+        public IActionResult DeleteEntry(int id)
+        {
+            var record = repo.GetById(id);
+            return View(record);
+        }
+        [HttpPost]
+        public IActionResult DeleteEntry(Burialmain record)
+        {
+            repo.DeleteRecord(record);
+            return RedirectToAction("DisplayList");
+        }
+/*        public IActionResult Confirmation()
+        {
+
+        }*/
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
