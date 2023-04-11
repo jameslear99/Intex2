@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -9,6 +10,8 @@ namespace Intex2.Data
 {
     public partial class Textile
     {
+        [Key]
+        [Required]
         public long Id { get; set; }
         public string Locale { get; set; }
         public int? Textileid { get; set; }
@@ -18,5 +21,6 @@ namespace Intex2.Data
         public DateTime? Sampledate { get; set; }
         public DateTime? Photographeddate { get; set; }
         public string Direction { get; set; }
+
     }
 }
