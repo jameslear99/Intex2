@@ -8,10 +8,6 @@
 
     @foreach (Burialmain m in Model.Mummies)
     { 
-    @foreach (BurialmainTextile bt in Model.BridgeTable)
-    {
-    @foreach (Textile t in Model.Textiles)
-        {
             <div class="card card-outline-primary m-2 p-2">
                 <div class="bg-light p-1">
                     <h4>Title Something</h4>
@@ -21,22 +17,11 @@
                         <li>@m.Id</li>
                         <li>@m.Sex</li>
                         <li>@m.Depth</li>
-                        @if (bt != null && (bt.MainBurialmainid == m.Id))
-                        {
-                        @if (t != null && (t.Id == bt.MainTextileid))
-                        {
-                                    <li>Textile Id: @t.Id</li>
-                                    <li>Description: @t.Description</li>
-                                    <li>Locale: @t.Locale</li>
-                        }
-                        }
-                        </ul>
+                    </ul>
                 </div>
+
             </div>
         }
-        }
-        }
-
     <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
          page-class="btn" page-class-normal="btn-outline-dark"
          page-class-selected="btn-primary" class="btn-group pull-right m-1 pagecenter"></div>
