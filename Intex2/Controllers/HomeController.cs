@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Intex2.Controllers
 {
@@ -17,7 +18,7 @@ namespace Intex2.Controllers
         public HomeController(IMummyProjectRepository temp) => repo = temp;
 
 
-
+        
         public IActionResult DisplayList( int pageNum = 1)
         {
             int pageSize = 100;
@@ -57,6 +58,7 @@ namespace Intex2.Controllers
         {
             return View();
         }
+        [Authorize]
         [HttpGet]
         public IActionResult AddEntry(int id)
         {
@@ -67,30 +69,39 @@ namespace Intex2.Controllers
             };
             return View(viewModel);
         }
+        [Authorize]
         [HttpPost]
         public IActionResult AddEntry(Burialmain record)
         {
             repo.AddRecord(record);
             return RedirectToAction("DisplayList");
         }
+
+        [Authorize]
         [HttpGet]
         public IActionResult EditBurialmain(int id)
         {
             var record = repo.GetById(id);
             return View(record);
         }
+
+        [Authorize]
         [HttpPost]
         public IActionResult EditBurialmain(Burialmain record)
         {
             repo.UpdateRecord(record);
             return RedirectToAction("DisplayList");
         }
+
+        [Authorize]
         [HttpGet]
         public IActionResult DeleteEntry(int id)
         {
             var record = repo.GetById(id);
             return View(record);
         }
+
+        [Authorize]
         [HttpPost]
         public IActionResult DeleteEntry(Burialmain record)
         {
