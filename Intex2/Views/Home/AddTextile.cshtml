@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Textile
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="Id" type="hidden" />
+    <div class="container bg-light rounded">
+        <fieldset class="form-group">
+            <legend>Textile Information</legend>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="Locale">Locale:</label>
+                    <input asp-for="Locale" class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="Textileid">Textileid:</label>
+                    <input asp-for="Textileid" class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="Description">Description:</label>
+                    <input asp-for="Description" class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="Burialnumber">Burialnumber:</label>
+                    <input asp-for="Burialnumber" class="form-control" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label asp-for="Estimatedperiod">Estimatedperiod:</label>
+                    <input asp-for="Estimatedperiod" class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="Sampledate">Sampledate:</label>
+                    <input asp-for="Sampledate" class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="Photographeddate">Photographeddate:</label>
+                    <input asp-for="Photographeddate" class="form-control" />
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label asp-for="Direction">Direction:</label>
+                    <input asp-for="Direction" class="form-control" />
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+
+    <button type="submit" asp-controller="Home" asp-action="AddTextile">Submit</button>
+
+</form>

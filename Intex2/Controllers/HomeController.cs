@@ -17,6 +17,8 @@ namespace Intex2.Controllers
         public IMummyProjectRepository repo;
         public HomeController(IMummyProjectRepository temp) => repo = temp;
 
+   
+
 
         
         public IActionResult DisplayList( int pageNum = 1)
@@ -42,7 +44,7 @@ namespace Intex2.Controllers
             return View(x);
         }
         [HttpGet]
-        public IActionResult Textile(long Id)
+        public IActionResult Details(long Id)
         {
 
             var x = new MummyViewModel
@@ -77,12 +79,21 @@ namespace Intex2.Controllers
         [HttpGet]
         public IActionResult AddEntry(int id)
         {
-            var viewModel = new MummyViewModel
+
+            var burialmain = repo.Mummies.ToList();
+            var textiles = repo.Textiles.ToList();
+
+            ViewBag.Burialmain = burialmain;
+            ViewBag.Textiles = textiles;
+
+
+
+            /*var viewModel = new MummyViewModel
             {
                 Mummies = repo.Mummies,
                 Textiles = repo.Textiles
-            };
-            return View(viewModel);
+            };*/
+            return View();
         }
         [Authorize]
         [HttpPost]
@@ -91,6 +102,24 @@ namespace Intex2.Controllers
             repo.AddRecord(record);
             return RedirectToAction("DisplayList");
         }
+
+
+        //adding textiles
+        [HttpGet]
+        public IActionResult AddTextile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddTextile(Textile record)
+        {
+            repo.AddRecord(record);
+
+            return RedirectToAction("DisplayList");
+        }
+
+
 
         [Authorize]
         [HttpGet]
