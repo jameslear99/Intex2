@@ -6,6 +6,10 @@
 
 <div>
 
+    <div>
+        <button class="btn btn-sm btn-danger">Add a Mummy</button>
+    </div>
+
     @foreach (Burialmain m in Model.Mummies)
     {
         <div class="card card-outline-primary m-2 p-2">
@@ -17,6 +21,20 @@
                     <li>@m.Id</li>
                     <li>@m.Sex</li>
                     <li>@m.Depth</li>
+                    <li>
+                        <form method="post" asp-page-handler="Remove">
+                            <input type="hidden" name="Id" value="@m.Id"/>
+                            <!--Return URL <input type="hidden" name="returnUrl" value=" at model ReturnUrl"-->
+                            <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form>
+                            <input type="hidden" name="Id" value="@m.Id" />
+                            
+                            <button type="submit" class="btn btn-sm">Edit</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
