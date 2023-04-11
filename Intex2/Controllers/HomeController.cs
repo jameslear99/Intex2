@@ -60,7 +60,7 @@ namespace Intex2.Controllers
         }
         [Authorize]
         [HttpGet]
-        public IActionResult AddEntry()
+        public IActionResult AddEntry(int id)
         {
             var viewModel = new MummyViewModel
             {
