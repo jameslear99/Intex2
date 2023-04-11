@@ -23,7 +23,7 @@
                     <li>@m.Depth</li>
                     <li>
                         <form method="post" asp-page-handler="Remove">
-                            <input type="hidden" name="Id" value="@m.Id"/>
+                            <input type="hidden" name="Id" value="@m.Id" />
                             <!--Return URL <input type="hidden" name="returnUrl" value=" at model ReturnUrl"-->
                             <button type="submit" class="btn btn-sm btn-danger">Remove</button>
                         </form>
@@ -31,16 +31,17 @@
                     <li>
                         <form>
                             <input type="hidden" name="Id" value="@m.Id" />
-                            
+
                             <button type="submit" class="btn btn-sm">Edit</button>
                         </form>
                     </li>
                 </ul>
-@*                <form method="get" asp-controller="Home" asp-action="Textile">
-                    <input type="hidden" name="Id" asp-route-Id="@m.Id"/>
+
+                <form method="get" asp-controller="Home" asp-action="Textile">
+                    <input type="hidden" name="Id" value="@m.Id" />
                     <button type="submit" class="btn btn-sm">View Associated Textile</button>
-                </form>*@
-                <a asp-controller="Home" asp-action="Textile" asp-route-Id="@m.Id">View Associated Textile</a>
+                </form>
+                <!-- <a asp-controller="Home" asp-action="Textile" asp-route-Id="@m.Id">View Associated Textile</a>-->
             </div>
         </div>
         

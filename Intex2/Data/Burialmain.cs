@@ -48,9 +48,5 @@ namespace Intex2.Data
         public string Clusternumber { get; set; }
         public string Shaftnumber { get; set; }
 
-        //FK relationship
-        public long MainBurialmainid { get; set; }
-        public long MainTextileid { get; set; }
-        public Textile Textile { get; set; }
     }
 }

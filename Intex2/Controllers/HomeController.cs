@@ -42,8 +42,9 @@ namespace Intex2.Controllers
             return View(x);
         }
         [HttpGet]
-        public IActionResult Textile(int Id)
+        public IActionResult Textile(long Id)
         {
+
             var x = new MummyViewModel
             {
                 Mummies = repo.Mummies,
@@ -51,7 +52,7 @@ namespace Intex2.Controllers
                 Textiles = repo.Textiles
             };
             var Bridge = x.BridgeTable.Where(b => b.MainBurialmainid == Id).Select(b=> b.MainTextileid);
-            int BridgeId = (int)Bridge.FirstOrDefault();
+            long BridgeId = (long)Bridge.FirstOrDefault();
             var textile = x.Textiles.SingleOrDefault(t => t.Id == BridgeId);
             return View(textile);
         }
