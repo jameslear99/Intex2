@@ -19,7 +19,7 @@ namespace Intex2.Controllers
 
         public IActionResult DisplayList( int pageNum = 1)
         {
-            int pageSize = 10;
+            int pageSize = 100;
 
             //this is how we pass multiple things into the index page so we can access both the db and pagination info
             var x = new MummyViewModel
