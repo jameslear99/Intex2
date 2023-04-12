@@ -4,59 +4,67 @@
 
 @model MummyViewModel
 
-<div>
-
     <div>
-        <a class="btn btn-sm btn-danger" asp-controller="Home" asp-action="AddEntry">Add a Mummy</a>
-    </div>
-
-    @foreach (Burialmain m in Model.Mummies)
-    {
-        <div class="card card-outline-primary m-2 p-2">
-            <div class="bg-light p-1">
-                <h4>Burial Number: @m.Burialnumber</h4>
+        <br /><br /><br /><br /><br />
+        <div class="row container">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <h1 class="pagecenter">List of Recorded Mummy Records</h1>
             </div>
-            <br />
-            <div class="container">
-                <div class="row">
-                    <div class="col-4">Mummy Id: @m.Id</div>
-                    <div class="col-1">Sex: @m.Sex</div>
-                    <div class="col-3">Excavation Date: @m.Dateofexcavation</div>
-                
-                    <div class="col-1">
-                        <form method="post" asp-page-handler="Remove">
-                            <input type="hidden" name="Id" value="@m.Id" />
-                            <!--Return URL <input type="hidden" name="returnUrl" value=" at model ReturnUrl"-->
-                            <button type="submit" class="btn btn-outline-danger">Remove</button>
-                        </form>
-                    </div>
-                    <div class="col-1">
-                        <form>
-                            <input type="hidden" name="Id" value="@m.Id" />
-
-                            <button type="submit" class="btn btn-outline-warning">Edit</button>
-                        </form>
-                    </div>
-                    <div class="col-2">
-                        <form method="get" asp-controller="Home" asp-action="AddTextile">
-                            <input type="hidden" name="Id" value="@m.Id" />
-
-                            <button type="submit" class="btn btn-outline-success">Add Textile</button>
-                        </form>
-                    </div>
-
-                </div>
-
-                <form method="get" asp-controller="Home" asp-action="Details">
-                    <input type="hidden" name="Id" value="@m.Id" />
-                    <button type="submit" class="btn btn-sm">View Details</button>
-                </form>
-                <!-- <a asp-controller="Home" asp-action="Textile" asp-route-Id="@m.Id">View Associated Textile</a>-->
+            <div class="col-2">
+                <a class="btn btn-get-started" asp-controller="Home" asp-action="AddEntry">Add a Mummy</a>
             </div>
         </div>
-        
-    }
-    <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
-         page-class="btn" page-class-normal="btn-outline-dark"
-         page-class-selected="btn-primary" class="btn-group pull-right m-1 pagecenter"></div>
-</div>
+
+        @foreach (Burialmain m in Model.Mummies)
+        {
+            <div class="container">
+                <div class="card card-outline-primary m-2 p-2">
+                    <div class="bg-light p-1">
+                        <h4>Burial Number: @m.Burialnumber</h4>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">Mummy Id: @m.Id</div>
+                            <div class="col-1">Sex: @m.Sex</div>
+                            <div class="col-3">Excavation Date: @m.Dateofexcavation</div>
+
+                            <div class="col-1">
+                                <form method="post" asp-page-handler="Remove">
+                                    <input type="hidden" name="Id" value="@m.Id" />
+                                    <!--Return URL <input type="hidden" name="returnUrl" value=" at model ReturnUrl"-->
+                                    <button type="submit" class="btn btn-outline-danger">Remove</button>
+                                </form>
+                            </div>
+                            <div class="col-1">
+                                <form>
+                                    <input type="hidden" name="Id" value="@m.Id" />
+
+                                    <button type="submit" class="btn btn-outline-warning">Edit</button>
+                                </form>
+                            </div>
+                            <div class="col-2">
+                                <form method="get" asp-controller="Home" asp-action="AddTextile">
+                                    <input type="hidden" name="Id" value="@m.Id" />
+
+                                    <button type="submit" class="btn btn-outline-success">Add Textile</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <form method="get" asp-controller="Home" asp-action="Details">
+                            <input type="hidden" name="Id" value="@m.Id" />
+                            <button type="submit" class="btn btn-sm">View Details</button>
+                        </form>
+                        <!-- <a asp-controller="Home" asp-action="Textile" asp-route-Id="@m.Id">View Associated Textile</a>-->
+                    </div>
+                </div>
+            </div>
+
+        }
+        <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+             page-class="btn" page-class-normal="btn-outline-dark"
+             page-class-selected="btn-primary" class="btn-group pull-right m-1 pagecenter"></div>
+    </div>

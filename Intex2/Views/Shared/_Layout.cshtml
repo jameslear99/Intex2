@@ -4,45 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Intex2</title>
+    <link href="~/css/site.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    
 </head>
 <body>
-    <header>
-        <nav class="navbar nav-pills navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+    <header id="header" class="fixed-top header-inner-pages">
+        <div class="container d-flex align-items-center justify-content-between">
+            <h1 class="logo"><a asp-area="" asp-controller="Home" asp-action="Index">FAG EL-GAMOUS</a></h1>
 
-
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Intex2</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="DisplayList">Summary & Records</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Supervised">Supervised</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Unsupervised">Unsupervised</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            <nav id="navbar" class="navbar">
+                        <ul>
+                            <li>
+                                <a class="nav-link scrollto" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li>
+                                <a class="nav-link scrollto" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                            <li>
+                                <a class="nav-link scrollto" asp-area="" asp-controller="Home" asp-action="DisplayList">Summary & Records</a>
+                            </li>
+                            <li>
+                                <a class="nav-link scrollto" asp-area="" asp-controller="Home" asp-action="Supervised">Supervised</a>
+                            </li>
+                            <li>
+                                <a class="nav-link scrollto" asp-area="" asp-controller="Home" asp-action="Unsupervised">Unsupervised</a>
+                            </li>
+                        </ul>
+                    
+                
+            </nav>
+        </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div>
+        <main role="main">
             @RenderBody()
         </main>
     </div>

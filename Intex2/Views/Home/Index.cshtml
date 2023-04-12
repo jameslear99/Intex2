@@ -2,28 +2,245 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1 class="">FAG EL-GAMOUS</h1>
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-            <p>
-                The Fag el-Gamous is an important cemetery located in Egypt that's provided important into on the ancient Egpytian
-                world. This site has been under significant archeological investigation and many of the projects have been managed by
-                BYU researchers. The cemetary features a high burial density and indicates potential change in burial rituals over the
-                years. The site is to be used as a source of learning for the public about the progress and implications of the
-                archeological project. It also serves as a tool for researchers to identify characteristics about the mummies that
-                are continuously being found.
-            </p>
+        <div class="carousel-inner" role="listbox">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active" style="background-image: url(~/wwwroot/img/slide-1.jpg)">
+                <div class="carousel-container">
+                    <div class="container">
+                        <h2 class="animated fadeInDown">Welcome to <span>Fag el-Gamous</span></h2>
+                        <p class="animated fadeInUp">
+                            The Fag el-Gamous is an important cemetery located in Egypt that's provided important into on the ancient Egpytian
+                            world. This site has been under significant archeological investigation and many of the projects have been managed by
+                            BYU researchers. The cemetary features a high burial density and indicates potential change in burial rituals over the
+                            years. The site is to be used as a source of learning for the public about the progress and implications of the
+                            archeological project. It also serves as a tool for researchers to identify characteristics about the mummies that
+                            are continuously being found.
+                        </p>
+                        <a asp-controller="Home" asp-action="AddEntry" class="btn-get-started animated fadeInUp scrollto">Enter Mummy Record</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <img src="~/img/try1000.jpg" />
     </div>
-    <br /><br />
-    <div>
-        <a class="btn btn-sm btn-info" asp-controller="Home" asp-action="AddEntry">Add a Mummy</a>
+</section>
+
+<main id="main">
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+        <div class="container-fluid">
+
+            <div class="section-title">
+                <h2>Project</h2>
+                <h3>Here's the <span>Project</span></h3>
+                <p>For more than 25 years, Fag el-Gamous, a significant and expansive burial site in Egypt, has been the focus of archaeological research, primarily conducted by researchers from BYU. The investigation has attracted global attention due to the fascinating revelations obtained from examining the mummies found at Fag el-Gamous, which means "Way of the Water Buffalo" in English.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="row">
+
+                        <div class="col-xl-3 col-lg-4 col-md-6">
+                            <div class="member">
+                                <img src="~/img/card2.jpg" class="img-fluid" alt="">
+                                <div class="member-info">
+                                    <div class="member-info-content">
+                                        <h4>Similar Casket</h4>
+                                        <span>Example of casket from other excavation site</span>
+                                    </div>
+                                    <div class="social">
+                                        <a href=""><i class="bi bi-twitter"></i></a>
+                                        <a href=""><i class="bi bi-facebook"></i></a>
+                                        <a href=""><i class="bi bi-instagram"></i></a>
+                                        <a href=""><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End Member Item -->
+
+                        <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
+                            <div class="member">
+                                <img src="~/img/mummyground.jpg" class="img-fluid" alt="">
+                                <div class="member-info">
+                                    <div class="member-info-content">
+                                        <h4>Mummy</h4>
+                                        <span>Image of mummy found at excavation site</span>
+                                    </div>
+                                    <div class="social">
+                                        <a href=""><i class="bi bi-twitter"></i></a>
+                                        <a href=""><i class="bi bi-facebook"></i></a>
+                                        <a href=""><i class="bi bi-instagram"></i></a>
+                                        <a href=""><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End Member Item -->
+
+                        <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
+                            <div class="member">
+                                <img src="~/img/group.jpg" class="img-fluid" alt="">
+                                <div class="member-info">
+                                    <div class="member-info-content">
+                                        <h4>BYU Team</h4>
+                                        <span>Byu team at excavation site</span>
+                                    </div>
+                                    <div class="social">
+                                        <a href=""><i class="bi bi-twitter"></i></a>
+                                        <a href=""><i class="bi bi-facebook"></i></a>
+                                        <a href=""><i class="bi bi-instagram"></i></a>
+                                        <a href=""><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End Member Item -->
+
+                        <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
+                            <div class="member">
+                                <img src="~/img/findingpicture.jpg" class="img-fluid" alt="">
+                                <div class="member-info">
+                                    <div class="member-info-content">
+                                        <h4>Finding</h4>
+                                        <span>BYU professor and a new finding</span>
+                                    </div>
+                                    <div class="social">
+                                        <a href=""><i class="bi bi-twitter"></i></a>
+                                        <a href=""><i class="bi bi-facebook"></i></a>
+                                        <a href=""><i class="bi bi-instagram"></i></a>
+                                        <a href=""><i class="bi bi-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- End Member Item -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Team Section -->
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+        <div class="container">
+
+            <div class="text-center">
+                <h3>Are You a Researcher?</h3>
+                <p>This site is not only for the public but is also meant
+                to be used frequently by current researchers to record their findings
+                related to excavations. Tracking mummies and their associated data
+                allow us to better understand the incredibly fascinating
+                events that took place at the Fag el-Gamous site thousands of years ago.</p>
+                <a class="cta-btn" asp-controller="Home" asp-action="AddEntry">Add a Record</a>
+            </div>
+
+        </div>
+    </section><!-- End Cta Section -->
+    <!-- ======= Facts Section ======= -->
+    <section id="contact" class="contact section-bg">
+        <div class="container-fluid">
+
+            <div class="section-title">
+                <h3>Important Facts About <span>Fag el-Gamous</span></h3>
+                <p>And why we are investing in such an excavation project.</p>
+            </div>
+
+            <div class="container-fluid">
+                            <div class="row justify-content-center">
+                                <div class="col-md-3 info">
+                                    <h4>What is Fag el-Gamous?</h4>
+                                    <p>The necropolis known as Fag el-Gamous is a vast Graeco-Roman burial ground located on the eastern side of the Fayoum Depression. Over 1000 burials have been excavated at the site, mostly in rectangular shafts with a high density of up to 3 burials per square meter. The burials reveal an interesting burial practice where the stratigraphically deepest ones were buried head east while later burials were buried head west, a shift that occurred as early as the late first to early second century AD, and coexisted for over 200 years.</p>
+                                </div>
+                                <div class="col-md-3 info">
+                                    <h4>Burial Patterns</h4>
+                                    <p>Burials at the cemetery are found largely in rectangular shafts at depths ranging from 0.3 to 3.0 meters and are oriented on an east-west axis. The high burial density, ranging from 1.3 to 3.0 burials per square meter, is due in part to multiple burials in the same shaft.</p>
+                                </div>
+                                <div class="col-md-3 info">
+                                    <h4>Change in Burial Orientation</h4>
+                                    <p>A significant change in burial orientation was observed, where the older burials were oriented head east and the newer burials were oriented head west. This shift occurred as early as the late first to the early second century AD and coexisted for at least 200 years. The cause of this directional shift is currently unknown, but the discovery of Christian artifacts suggests that some buried at Fag el-Gamous were affiliated with Christianity.</p>
+                                </div>
+                                <div class="col-md-3 info">
+                                    <h4>Location and Size</h4>
+                                    <p>The Fag el-Gamous cemetery is a 125-hectare Graeco-Roman necropolis located on the eastern edge of the Fayoum Depression, about 90 km south of Cairo.</p>
+                                </div>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Contact Section -->
+
+
+
+</main>
+<!-- End #main -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Index">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="DisplayList">Mummy Records</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Supervised">Supervised Insights</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Unsupervised">Unsupervised Insights</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a asp-controller="Home" asp-action="Privacy">Privacy policy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Learn More</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="https://www-sciencedirect-com.erl.lib.byu.edu/science/article/pii/S2352409X15000188">Info Article</a></li>
+</ul>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h4>Contact Us</h4>
+                            <p>
+                                Tanner Building <br>
+                                Provo, UT 84602<br>
+                                United States <br><br>
+                                <strong>Phone:</strong> +1 801 422 1230<br>
+                                <strong>Email:</strong> byu@byu.edu<br>
+                            </p>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 footer-info">
+                            <h3>Follow the Excavation</h3>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-
-
-</div>
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Hidayah</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/hidayah-free-simple-html-template-for-corporate/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
