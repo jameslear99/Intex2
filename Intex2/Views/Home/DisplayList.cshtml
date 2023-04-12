@@ -96,7 +96,7 @@
                             <div class="col-3">Excavation Date: @m.Dateofexcavation</div>
 
                             <div class="col-1">
-                                <form method="post" asp-page-handler="Remove">
+                                <form method="post" asp-controller="Home" asp-action="DeleteEntry">
                                     <input type="hidden" name="Id" value="@m.Id" />
                                     <!--Return URL <input type="hidden" name="returnUrl" value=" at model ReturnUrl"-->
                                     <button type="submit" class="btn btn-outline-danger">Remove</button>

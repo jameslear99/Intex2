@@ -228,8 +228,9 @@ namespace Intex2.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult DeleteEntry(Burialmain record)
+        public IActionResult DeleteEntry(long id)
         {
+            var record = repo.GetById(id);
             repo.DeleteRecord(record);
             return RedirectToAction("DisplayList");
         }
