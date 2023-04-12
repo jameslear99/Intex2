@@ -37,7 +37,19 @@ namespace Intex2.Controllers
 
                     PageInfo = new PageInfo
                     {
-                        TotalNumMummy = repo.Mummies.Count(),
+                        TotalNumMummy = (depth == null || depth == "")
+                                        ? ((sex == null || sex == "z")
+                                            ? ((headdirection == null || headdirection == "z")
+                                                ? ((ageatdeath == null || ageatdeath == "z")
+                                                    ? ((haircolor == null || haircolor == "z")
+                                                        ? ((wrapping == null || wrapping == "z")
+                                                            ? repo.Mummies.Count()
+                                                            : repo.Mummies.Where(b => b.Wrapping == wrapping).Count())
+                                                        : repo.Mummies.Where(b => b.Haircolor == haircolor).Count())
+                                                    : repo.Mummies.Where(b => b.Ageatdeath == ageatdeath).Count())
+                                                : repo.Mummies.Where(b => b.Headdirection == headdirection).Count())
+                                            : repo.Mummies.Where(b => b.Sex == sex).Count())
+                                        : repo.Mummies.Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1)).Count(),
                         MummyPerPage = pageSize,
                         CurrentPage = pageNum
                     }
@@ -59,7 +71,19 @@ namespace Intex2.Controllers
 
                     PageInfo = new PageInfo
                     {
-                        TotalNumMummy = repo.Mummies.Count(),
+                        TotalNumMummy = (depth == null || depth == "")
+                                        ? ((sex == null || sex == "z")
+                                            ? ((headdirection == null || headdirection == "z")
+                                                ? ((ageatdeath == null || ageatdeath == "z")
+                                                    ? ((haircolor == null || haircolor == "z")
+                                                        ? ((wrapping == null || wrapping == "z")
+                                                            ? repo.Mummies.Count()
+                                                            : repo.Mummies.Where(b => b.Wrapping == wrapping).Count())
+                                                        : repo.Mummies.Where(b => b.Haircolor == haircolor).Count())
+                                                    : repo.Mummies.Where(b => b.Ageatdeath == ageatdeath).Count())
+                                                : repo.Mummies.Where(b => b.Headdirection == headdirection).Count())
+                                            : repo.Mummies.Where(b => b.Sex == sex).Count())
+                                        : repo.Mummies.Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1)).Count(),
                         MummyPerPage = pageSize,
                         CurrentPage = pageNum
                     }
@@ -81,7 +105,19 @@ namespace Intex2.Controllers
 
                     PageInfo = new PageInfo
                     {
-                        TotalNumMummy = repo.Mummies.Count(),
+                        TotalNumMummy = (depth == null || depth == "")
+                                        ? ((sex == null || sex == "z")
+                                            ? ((headdirection == null || headdirection == "z")
+                                                ? ((ageatdeath == null || ageatdeath == "z")
+                                                    ? ((haircolor == null || haircolor == "z")
+                                                        ? ((wrapping == null || wrapping == "z")
+                                                            ? repo.Mummies.Count()
+                                                            : repo.Mummies.Where(b => b.Wrapping == wrapping).Count())
+                                                        : repo.Mummies.Where(b => b.Haircolor == haircolor).Count())
+                                                    : repo.Mummies.Where(b => b.Ageatdeath == ageatdeath).Count())
+                                                : repo.Mummies.Where(b => b.Headdirection == headdirection).Count())
+                                            : repo.Mummies.Where(b => b.Sex == sex).Count())
+                                        : repo.Mummies.Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1)).Count(),
                         MummyPerPage = pageSize,
                         CurrentPage = pageNum
                     }
