@@ -55,6 +55,13 @@ namespace Intex2.Controllers
                         CurrentPage = pageNum
                     }
                 };
+                x.SelectedDepth = depth;
+                x.SelectedSex = sex;
+                x.SelectedHeadDir = headdirection;
+                x.SelectedAgeAtDeath = ageatdeath;
+                x.SelectedHairColor = haircolor;
+                x.SelectedWrapping = wrapping;
+
                 return View(x);
             }
             else if (depth == "")
@@ -89,6 +96,12 @@ namespace Intex2.Controllers
                         CurrentPage = pageNum
                     }
                 };
+                x.SelectedDepth = depth;
+                x.SelectedSex = sex;
+                x.SelectedHeadDir = headdirection;
+                x.SelectedAgeAtDeath = ageatdeath;
+                x.SelectedHairColor = haircolor;
+                x.SelectedWrapping = wrapping;
                 return View(x);
             }
             else
@@ -123,6 +136,12 @@ namespace Intex2.Controllers
                         CurrentPage = pageNum
                     }
                 };
+                x.SelectedDepth = depth;
+                x.SelectedSex = sex;
+                x.SelectedHeadDir = headdirection;
+                x.SelectedAgeAtDeath = ageatdeath;
+                x.SelectedHairColor = haircolor;
+                x.SelectedWrapping = wrapping;
                 return View(x);
             }
         }
