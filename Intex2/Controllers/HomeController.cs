@@ -19,7 +19,7 @@ namespace Intex2.Controllers
         
         public IActionResult DisplayList(string depth = "", string sex = "z", string headdirection = "z", string ageatdeath = "z", string haircolor = "z", string wrapping = "z", int pageNum = 1)
         {
-            int pageSize = 100;
+            int pageSize = 50;
             if (depth != "U" && depth != "" && depth != null)
             {
                 //this is how we pass multiple things into the index page so we can access both the db and pagination info
