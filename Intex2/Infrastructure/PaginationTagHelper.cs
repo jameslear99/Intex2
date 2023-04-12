@@ -45,11 +45,28 @@ namespace Intex2.Infrastructure
 
                 TagBuilder final = new TagBuilder("div");
 
-                //this might have to be less than or equal to
-                for (int i = 1; i <= PageModel.TotalPages; i++)
+            string sexFilter = PageModel.Sex ?? "z";
+            string ageAtDeathFilter = PageModel.AgeAtDeath ?? "z";
+            string hairColorFilter = PageModel.HairColor ?? "z";
+            string wrappingFilter = PageModel.Wrapping ?? "z";
+            string headDirectionFilter = PageModel.HeadDirection ?? "z";
+            string depthFilter = PageModel.Depth ?? "";
+
+
+            //this might have to be less than or equal to
+            for (int i = 1; i <= PageModel.TotalPages; i++)
                 {
                     TagBuilder tb = new TagBuilder("a");
-                    tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
+                    tb.Attributes["href"] = uh.Action(PageAction, new { 
+                        pageNum = i,
+                        sex = sexFilter,
+                        ageatdeath = ageAtDeathFilter,
+                        haircolor = hairColorFilter,
+                        wrapping = wrappingFilter,
+                        headdirection = headDirectionFilter,
+                        depth = depthFilter
+
+                    });
 
                     if (PageClassesEnabled)
                     {

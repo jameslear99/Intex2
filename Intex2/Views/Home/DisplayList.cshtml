@@ -5,7 +5,7 @@
 @model MummyViewModel
     <div class="container">
         <br /><br /><br /><br /><br /><br />
-        <form asp-controller="Home" asp-action="DisplayList">
+        <form method="get" asp-controller="Home" asp-action="DisplayList">
             <label>Depth (meters): </label>
             <select id="depth" name="depth">
                 <!--The empty values are for if we don't want to filter by that one right now when we submit-->

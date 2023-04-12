@@ -17,6 +17,7 @@ namespace Intex2.Controllers
         public IMummyProjectRepository repo;
         public HomeController(IMummyProjectRepository temp) => repo = temp;
         
+        [HttpGet]
         public IActionResult DisplayList(string depth = "", string sex = "z", string headdirection = "z", string ageatdeath = "z", string haircolor = "z", string wrapping = "z", int pageNum = 1)
         {
             int pageSize = 50;
