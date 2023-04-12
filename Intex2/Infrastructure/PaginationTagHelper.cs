@@ -32,6 +32,13 @@ namespace Intex2.Infrastructure
             public PageInfo PageModel { get; set; }
             public string PageAction { get; set; }
 
+            public string Depth { get; set; }
+            public string Sex { get; set; }
+            public string HeadDirection { get; set; }
+            public string AgeAtDeath { get; set; }
+            public string HairColor { get; set; }
+            public string Wrapping { get; set; }
+
             public string PageClass { get; set; }
             public bool PageClassesEnabled { get; set; }
             public string PageClassNormal { get; set; }
@@ -45,12 +52,6 @@ namespace Intex2.Infrastructure
 
                 TagBuilder final = new TagBuilder("div");
 
-            string sexFilter = PageModel.Sex ?? "z";
-            string ageAtDeathFilter = PageModel.AgeAtDeath ?? "z";
-            string hairColorFilter = PageModel.HairColor ?? "z";
-            string wrappingFilter = PageModel.Wrapping ?? "z";
-            string headDirectionFilter = PageModel.HeadDirection ?? "z";
-            string depthFilter = PageModel.Depth ?? "";
 
 
             //this might have to be less than or equal to
@@ -59,12 +60,12 @@ namespace Intex2.Infrastructure
                     TagBuilder tb = new TagBuilder("a");
                     tb.Attributes["href"] = uh.Action(PageAction, new { 
                         pageNum = i,
-                        sex = sexFilter,
-                        ageatdeath = ageAtDeathFilter,
-                        haircolor = hairColorFilter,
-                        wrapping = wrappingFilter,
-                        headdirection = headDirectionFilter,
-                        depth = depthFilter
+                        depth = Depth,
+                        sex = Sex,
+                        headDirection = HeadDirection,
+                        ageAtDeath = AgeAtDeath,
+                        hairColor = HairColor,
+                        wrapping = Wrapping
 
                     });
 
