@@ -27,13 +27,12 @@ namespace Intex2.Controllers
                 {
                     Mummies = repo.Mummies /*It is able to return correct ranges for numbers, currently can't handle b.Depth's of null, U, or ""*/
                     .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1))
-                    .Where(b=> b.Sex == sex || sex == null)
-                    .Where(b=> b.Headdirection == headdirection || headdirection == null)
-                    .Where(b=> b.Ageatdeath == ageatdeath || ageatdeath == null)
-                    .Where(b=> b.Haircolor == haircolor || haircolor == null)
-                    .Where(b=> b.Wrapping == wrapping || wrapping == null)
+                    .Where(b=> b.Sex == sex || sex == null || sex == "z")
+                    .Where(b=> b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b=> b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b=> b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b=> b.Wrapping == wrapping || wrapping == null || wrapping == "z")
                     .Skip((pageNum - 1) * pageSize)
-                    .OrderByDescending(b => Convert.ToDecimal(b.Depth))
                     .Take(pageSize),
 
                     PageInfo = new PageInfo
@@ -51,12 +50,11 @@ namespace Intex2.Controllers
                 {
                     Mummies = repo.Mummies
                     .Skip((pageNum - 1) * pageSize)
-                    .Where(b => b.Sex == sex || sex == null)
-                    .Where(b => b.Headdirection == headdirection || headdirection == null)
-                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null)
-                    .Where(b => b.Haircolor == haircolor || haircolor == null)
-                    .Where(b => b.Wrapping == wrapping || wrapping == null)
-                    .OrderByDescending(b => b.Depth)
+                    .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
                     .Take(pageSize),
 
                     PageInfo = new PageInfo
@@ -74,8 +72,12 @@ namespace Intex2.Controllers
                 {
                     Mummies = repo.Mummies
                     .Where(b => b.Depth == "U" || b.Depth == null || b.Depth == "")
+                    .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
                     .Skip((pageNum - 1) * pageSize)
-                    .OrderByDescending(b => b.Depth)
                     .Take(pageSize),
 
                     PageInfo = new PageInfo
