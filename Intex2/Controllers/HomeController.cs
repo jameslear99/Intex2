@@ -170,7 +170,9 @@ namespace Intex2.Controllers
         public IActionResult AddEntry(int id)
         {
 
-            var burialmain = repo.Mummies.ToList();
+            var burialmain = repo.Mummies
+                .Where(b=>b.Id == id || id == 0)
+                .ToList();
             var textiles = repo.Textiles.ToList();
 
             ViewBag.Burialmain = burialmain;
@@ -216,7 +218,7 @@ namespace Intex2.Controllers
         public IActionResult EditBurialmain(int id)
         {
             var record = repo.GetById(id);
-            return View(record);
+            return RedirectToAction("AddEntry", record);
         }
 
         [Authorize]

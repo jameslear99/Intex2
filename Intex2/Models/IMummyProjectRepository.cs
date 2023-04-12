@@ -9,7 +9,7 @@ namespace Intex2.Models
     {
         IQueryable<Burialmain> Mummies { get; }
         IEnumerable<Burialmain> GetAll();
-        Burialmain GetById(int id);
+        Burialmain GetById(long id);
         void AddRecord(Burialmain record);
         void UpdateRecord(Burialmain record);
         void DeleteRecord(Burialmain record);

@@ -8,14 +8,14 @@
 <div class="grid-container form">
     <form method="post">
         <div asp-validation-summary="All"></div>
-        <input asp-for="Id" type="hidden" />
+        <input asp-for="Id" type="hidden"/>
         <div class="container bg-light rounded">
             <fieldset class="form-group ">
                 <legend>Burial Information</legend>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label asp-for="Burialid">Burial Id:</label>
-                        <input asp-for="Burialid" class="form-control" />
+                        <input asp-for="Burialid" class="form-control" value="@ViewBag.Burialmain.Mummies.Id"/>
                     </div>
                     <div class="form-group col-md-6">
                         <label asp-for="Burialnumber">Burial Number:</label>
