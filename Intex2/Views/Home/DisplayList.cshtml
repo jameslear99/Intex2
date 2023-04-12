@@ -7,15 +7,18 @@
     <form asp-controller="Home" asp-action="DisplayList">
         <label>Depth (meters): </label>
         <select id="depth" name="depth">
-            <option value=1>0-1</option>
-            <option value=2>1-2</option>
-            <option value=3>2-3</option>
-            <option value=4>3-4</option>
+            <!--The empty values are for if we don't want to filter by that one right now when we submit-->
+            <option value=""></option>
+            <option value="1">0-1</option>
+            <option value="2">1-2</option>
+            <option value="3">2-3</option>
+            <option value="4">3-4</option>
             <option value="U">Other</option>
         </select>
 
         <label>Sex: </label>
         <select>
+            <option value=""></option>
             <option value="M">Male</option>
             <option value="F">Female</option>
             <option>Unknown</option>
@@ -23,6 +26,7 @@
 
         <label>Head Direction: </label>
         <select>
+            <option value=""></option>
             <option value="E">East</option>
             <option value="W">West</option>
             <option>Other</option>
@@ -30,6 +34,7 @@
 
         <label>Age at Death: </label>
         <select>
+            <option value=""></option>
             <option value="A">Adult</option>
             <option value="C">Child</option>
             <option value="I">Infant</option>
@@ -39,6 +44,7 @@
 
         <label>Hair Color</label>
         <select>
+            <option value=""></option>
             <option value="B">Brown(Dark and Light)</option>
             <option value="K">Black</option>
             <option value="A">Brown/Red</option>
@@ -49,6 +55,7 @@
 
         <label>Burial Wrapping: </label>
         <select>
+            <option value=""></option>
             <option value="W">Full or nearly full wrapping remains</option>
             <option value="H">Partial wrapping remains</option>
             <option value="B">Bones and/or only partial remnants of wrapping remains</option>

@@ -21,20 +21,16 @@ namespace Intex2.Controllers
 
 
         
-        public IActionResult DisplayList( int depth, int pageNum = 1)
+        public IActionResult DisplayList(string depth, int pageNum = 1)
         {
             int pageSize = 100;
-
-
-            try 
-            {
-
                 //this is how we pass multiple things into the index page so we can access both the db and pagination info
                 var x = new MummyViewModel
                 {
-                    Mummies = repo.Mummies
-                    .Where(b => Convert.ToDecimal(b.Depth)< Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) < (Convert.ToDecimal(depth) - 1) || depth == null)
+                    Mummies = repo.Mummies /*It is able to return correct ranges for numbers, currently can't handle b.Depth's of null, U, or ""*/
+                    .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1)/*Convert.ToDecimal(b.Depth)< Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) < (Convert.ToDecimal(depth) - 1) || depth == null*/)
                     .Skip((pageNum - 1) * pageSize)
+                    .OrderByDescending(b => Convert.ToDecimal(b.Depth))
                     .Take(pageSize),
 
                     PageInfo = new PageInfo
@@ -44,30 +40,7 @@ namespace Intex2.Controllers
                         CurrentPage = pageNum
                     }
                 };
-            
-
-            return View(x);
-            }
-            catch 
-            {
-                var x = new MummyViewModel
-                {
-                    Mummies = repo.Mummies
-                    .Where(b => b.Depth == depth || depth == null)
-                    .Skip((pageNum - 1) * pageSize)
-                    .Take(pageSize),
-
-                    PageInfo = new PageInfo
-                    {
-                        TotalNumMummy = repo.Mummies.Count(),
-                        MummyPerPage = pageSize,
-                        CurrentPage = pageNum
-                    }
-                };
-
-
-                return View(x);
-            }
+            return View(x);         
         }
         [HttpGet]
         public IActionResult Details(long Id)
