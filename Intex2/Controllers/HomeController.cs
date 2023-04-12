@@ -181,22 +181,13 @@ namespace Intex2.Controllers
         }
         [Authorize]
         [HttpGet]
-        public IActionResult AddEntry(int id)
+        public IActionResult AddEntry()
         {
-
+            long LastId = repo.Mummies.Max(m => m.Id);
             var burialmain = repo.Mummies.ToList();
-            var textiles = repo.Textiles.ToList();
 
             ViewBag.Burialmain = burialmain;
-            ViewBag.Textiles = textiles;
-
-
-
-            /*var viewModel = new MummyViewModel
-            {
-                Mummies = repo.Mummies,
-                Textiles = repo.Textiles
-            };*/
+            ViewBag.LastId = LastId + 1;
             return View();
         }
         [Authorize]
