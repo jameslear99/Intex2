@@ -17,27 +17,76 @@ namespace Intex2.Controllers
         public IMummyProjectRepository repo;
         public HomeController(IMummyProjectRepository temp) => repo = temp;
         
-        public IActionResult DisplayList( int pageNum = 1)
+        public IActionResult DisplayList(string depth, string sex, string headdirection, string ageatdeath, string haircolor, string wrapping, int pageNum = 1)
         {
             int pageSize = 100;
-
-            //this is how we pass multiple things into the index page so we can access both the db and pagination info
-            var x = new MummyViewModel
+            if (depth != "U" && depth != "")
             {
-                Mummies = repo.Mummies
-                .Skip((pageNum - 1) * pageSize)
-                .Take(pageSize),
-
-                PageInfo = new PageInfo
+                //this is how we pass multiple things into the index page so we can access both the db and pagination info
+                var x = new MummyViewModel
                 {
-                    TotalNumMummy = repo.Mummies.Count(),
-                    MummyPerPage = pageSize,
-                    CurrentPage = pageNum
-                }
-            };
+                    Mummies = repo.Mummies /*It is able to return correct ranges for numbers, currently can't handle b.Depth's of null, U, or ""*/
+                    .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1)/*Convert.ToDecimal(b.Depth)< Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) < (Convert.ToDecimal(depth) - 1) || depth == null*/)
+                    .Where(b=> b.Sex == sex || sex == null)
+                    .Where(b=> b.Headdirection == headdirection || headdirection == null)
+                    .Where(b=> b.Ageatdeath == ageatdeath || ageatdeath == null)
+                    .Where(b=> b.Haircolor == haircolor || haircolor == null)
+                    .Where(b=> b.Wrapping == wrapping || wrapping == null)
+                    .Skip((pageNum - 1) * pageSize)
+                    .OrderByDescending(b => Convert.ToDecimal(b.Depth))
+                    .Take(pageSize),
 
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumMummy = repo.Mummies.Count(),
+                        MummyPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
+                return View(x);
+            }
+            else if (depth == "")
+            {
+                var x = new MummyViewModel
+                {
+                    Mummies = repo.Mummies
+                    .Skip((pageNum - 1) * pageSize)
+                    .Where(b => b.Sex == sex || sex == null)
+                    .Where(b => b.Headdirection == headdirection || headdirection == null)
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null)
+                    .Where(b => b.Haircolor == haircolor || haircolor == null)
+                    .Where(b => b.Wrapping == wrapping || wrapping == null)
+                    .OrderByDescending(b => b.Depth)
+                    .Take(pageSize),
 
-            return View(x);
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumMummy = repo.Mummies.Count(),
+                        MummyPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
+                return View(x);
+            }
+            else
+            {
+                var x = new MummyViewModel
+                {
+                    Mummies = repo.Mummies
+                    .Where(b => b.Depth == "U" || b.Depth == null || b.Depth == "")
+                    .Skip((pageNum - 1) * pageSize)
+                    .OrderByDescending(b => b.Depth)
+                    .Take(pageSize),
+
+                    PageInfo = new PageInfo
+                    {
+                        TotalNumMummy = repo.Mummies.Count(),
+                        MummyPerPage = pageSize,
+                        CurrentPage = pageNum
+                    }
+                };
+                return View(x);
+            }
         }
         [HttpGet]
         public IActionResult Details(long Id)
