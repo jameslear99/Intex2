@@ -16,10 +16,6 @@ namespace Intex2.Controllers
     {
         public IMummyProjectRepository repo;
         public HomeController(IMummyProjectRepository temp) => repo = temp;
-
-   
-
-
         
         public IActionResult DisplayList(string depth, int pageNum = 1)
         {
@@ -55,7 +51,9 @@ namespace Intex2.Controllers
             var Bridge = x.BridgeTable.Where(b => b.MainBurialmainid == Id).Select(b=> b.MainTextileid);
             long BridgeId = (long)Bridge.FirstOrDefault();
             var textile = x.Textiles.SingleOrDefault(t => t.Id == BridgeId);
-            return View(textile);
+            var Data = x.Mummies.Where(m => m.Id == Id);
+            var Record = Data.FirstOrDefault();
+            return View(Record);
         }
 
         public IActionResult Privacy()
