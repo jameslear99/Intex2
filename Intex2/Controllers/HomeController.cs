@@ -26,7 +26,7 @@ namespace Intex2.Controllers
                 var x = new MummyViewModel
                 {
                     Mummies = repo.Mummies /*It is able to return correct ranges for numbers, currently can't handle b.Depth's of null, U, or ""*/
-                    .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1)/*Convert.ToDecimal(b.Depth)< Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) < (Convert.ToDecimal(depth) - 1) || depth == null*/)
+                    .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1) || depth == null)
                     .Where(b=> b.Sex == sex || sex == null)
                     .Where(b=> b.Headdirection == headdirection || headdirection == null)
                     .Where(b=> b.Ageatdeath == ageatdeath || ageatdeath == null)
