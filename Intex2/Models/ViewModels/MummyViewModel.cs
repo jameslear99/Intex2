@@ -13,23 +13,29 @@ namespace Intex2.Models.ViewModels
         public IQueryable<Photodata> Photodata { get; set; }
         public IQueryable<PhotodataTextile> PhotoBridge { get; set; }
         public PageInfo PageInfo { get; set; }
+        public string SelectedDepth { get; set; }
+        public string SelectedSex { get; set; }
+        public string SelectedHeadDir { get; set; }
+        public string SelectedAgeAtDeath { get; set; }
+        public string SelectedHairColor { get; set; }
+        public string SelectedWrapping { get; set; }
+        public long LastId { get; set; }
+        /* public MummyViewModel(Intex2Context context)
+         {
+             Mummies = context.Burialmain;
+             Textiles = context.Textile;
+             BridgeTable = context.BurialmainTextile;
+             Photodata = context.Photodata;
+             PhotoBridge = context.PhotodataTextile;
 
-       /* public MummyViewModel(Intex2Context context)
-        {
-            Mummies = context.Burialmain;
-            Textiles = context.Textile;
-            BridgeTable = context.BurialmainTextile;
-            Photodata = context.Photodata;
-            PhotoBridge = context.PhotodataTextile;
+             // Join the Burialmain and Textile tables using the BurialmainTextile bridge table
+             var joinedData = from mummy in Mummies
+                              join bridge in BridgeTable on mummy.Id equals bridge.MainBurialmainid
+                              join textile in Textiles on bridge.MainTextileid equals textile.Id
+                              select new { mummy, textile };
 
-            // Join the Burialmain and Textile tables using the BurialmainTextile bridge table
-            var joinedData = from mummy in Mummies
-                             join bridge in BridgeTable on mummy.Id equals bridge.MainBurialmainid
-                             join textile in Textiles on bridge.MainTextileid equals textile.Id
-                             select new { mummy, textile };
-
-            // Set the joined data as the Mummies property
-            Mummies = joinedData.Select(j => j.mummy);
-        }*/
+             // Set the joined data as the Mummies property
+             Mummies = joinedData.Select(j => j.mummy);
+         }*/
     }
 }

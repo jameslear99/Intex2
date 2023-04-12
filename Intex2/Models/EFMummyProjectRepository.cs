@@ -18,7 +18,7 @@ namespace Intex2.Models
         {
             return context.Burialmain.ToList();
         }
-        public Burialmain GetById(int id)
+        public Burialmain GetById(long id)
         {
             return context.Burialmain.Find(id);
         }

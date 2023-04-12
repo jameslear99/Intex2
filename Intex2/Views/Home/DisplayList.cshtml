@@ -5,62 +5,62 @@
 @model MummyViewModel
     <div class="container">
         <br /><br /><br /><br /><br /><br />
-        <form asp-controller="Home" asp-action="DisplayList">
+        <form method="get" asp-controller="Home" asp-action="DisplayList">
             <label>Depth (meters): </label>
             <select id="depth" name="depth">
                 <!--The empty values are for if we don't want to filter by that one right now when we submit-->
-                <option value=""></option>
-                <option value="1">0-1</option>
-                <option value="2">1-2</option>
-                <option value="3">2-3</option>
-                <option value="4">3-4</option>
-                <option value="U">Other</option>
+                <option selected="@(Model.SelectedDepth == "" ? "selected" : null)" value=""></option>
+                <option selected="@(Model.SelectedDepth == "1" ? "selected" : null)" value="1">0-1</option>
+                <option selected="@(Model.SelectedDepth == "2" ? "selected" : null)" value="2">1-2</option>
+                <option selected="@(Model.SelectedDepth == "3" ? "selected" : null)" value="3">2-3</option>
+                <option selected="@(Model.SelectedDepth == "4" ? "selected" : null)" value="4">3-4</option>
+                <option selected="@(Model.SelectedDepth == "U" ? "selected" : null)" value="U">Other</option>
             </select>
 
             <label>Sex: </label>
             <select id="sex" name="sex">
-                <option value=""></option>
-                <option value="M">Male</option>
-                <option value="F">Female</option>
+                <option selected="@(Model.SelectedSex == "z" ? "selected" : null)" value="z"></option>
+                <option selected="@(Model.SelectedSex == "M" ? "selected" : null)" value="M">Male</option>
+                <option selected="@(Model.SelectedSex == "F" ? "selected" : null)" value="F">Female</option>
                 <option>Unknown</option>
             </select>
 
             <label>Head Direction: </label>
             <select id="headdirection" name="headdirection">
-                <option value=""></option>
-                <option value="E">East</option>
-                <option value="W">West</option>
+                <option selected="@(Model.SelectedHeadDir == "z" ? "selected" : null)" value="z"></option>
+                <option selected="@(Model.SelectedHeadDir == "E" ? "selected" : null)" value="E">East</option>
+                <option selected="@(Model.SelectedHeadDir == "W" ? "selected" : null)" value="W">West</option>
                 <option>Other</option>
             </select>
 
             <label>Age at Death: </label>
             <select id="ageatdeath" name="ageatdeath">
-                <option value=""></option>
-                <option value="A">Adult</option>
-                <option value="C">Child</option>
-                <option value="I">Infant</option>
-                <option value="N">Newborn</option>
+                <option selected="@(Model.SelectedAgeAtDeath == "z" ? "selected" : null)" value="z"></option>
+                <option selected="@(Model.SelectedAgeAtDeath == "A" ? "selected" : null)" value="A">Adult</option>
+                <option selected="@(Model.SelectedAgeAtDeath == "C" ? "selected" : null)" value="C">Child</option>
+                <option selected="@(Model.SelectedAgeAtDeath == "I" ? "selected" : null)" value="I">Infant</option>
+                <option selected="@(Model.SelectedAgeAtDeath == "N" ? "selected" : null)" value="N">Newborn</option>
                 <option>Other</option>
             </select>
 
             <label>Hair Color</label>
             <select id="haircolor" name="haircolor">
-                <option value=""></option>
-                <option value="B">Brown(Dark and Light)</option>
-                <option value="K">Black</option>
-                <option value="A">Brown/Red</option>
-                <option value="R">Red/RedBlond</option>
-                <option value="D">Blond</option>
-                <option value="U">Unknown</option>
+                <option selected="@(Model.SelectedHairColor == "z" ? "selected" : null)" value="z"></option>
+                <option selected="@(Model.SelectedHairColor == "B" ? "selected" : null)" value="B">Brown(Dark and Light)</option>
+                <option selected="@(Model.SelectedHairColor == "K" ? "selected" : null)" value="K">Black</option>
+                <option selected="@(Model.SelectedHairColor == "A" ? "selected" : null)" value="A">Brown/Red</option>
+                <option selected="@(Model.SelectedHairColor == "R" ? "selected" : null)" value="R">Red/RedBlond</option>
+                <option selected="@(Model.SelectedHairColor == "D" ? "selected" : null)" value="D">Blond</option>
+                <option selected="@(Model.SelectedHairColor == "U" ? "selected" : null)" value="U">Unknown</option>
             </select>
 
             <label>Burial Wrapping: </label>
             <select id="wrapping" name="wrapping">
-                <option value=""></option>
-                <option value="W">Full or nearly full wrapping remains</option>
-                <option value="H">Partial wrapping remains</option>
-                <option value="B">Bones and/or only partial remnants of wrapping remains</option>
-                <option value="U">Unknown</option>
+                <option selected="@(Model.SelectedWrapping == "z" ? "selected" : null)" value="z"></option>
+                <option selected="@(Model.SelectedWrapping == "W" ? "selected" : null)" value="W">Full or nearly full wrapping remains</option>
+                <option selected="@(Model.SelectedWrapping == "H" ? "selected" : null)" value="H">Partial wrapping remains</option>
+                <option selected="@(Model.SelectedWrapping == "B" ? "selected" : null)" value="B">Bones and/or only partial remnants of wrapping remains</option>
+                <option selected="@(Model.SelectedWrapping == "U" ? "selected" : null)" value="U">Unknown</option>
             </select>
 
             <button type="submit">Filter</button>
@@ -96,14 +96,14 @@
                             <div class="col-3">Excavation Date: @m.Dateofexcavation</div>
 
                             <div class="col-1">
-                                <form method="post" asp-page-handler="Remove">
+                                <form method="post" asp-controller="Home" asp-action="DeleteEntry">
                                     <input type="hidden" name="Id" value="@m.Id" />
                                     <!--Return URL <input type="hidden" name="returnUrl" value=" at model ReturnUrl"-->
                                     <button type="submit" class="btn btn-outline-danger">Remove</button>
                                 </form>
                             </div>
                             <div class="col-1">
-                                <form>
+                                <form method="get" asp-controller="Home" asp-action="EditBurialmain">
                                     <input type="hidden" name="Id" value="@m.Id" />
 
                                     <button type="submit" class="btn btn-outline-warning">Edit</button>
@@ -130,7 +130,12 @@
             <br /><br />
 
         }
-        <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+        <div page-model="@Model.PageInfo" page-action="DisplayList" page-classes-enabled="true"
              page-class="btn" page-class-normal="btn-outline-dark"
-             page-class-selected="btn-primary" class="btn-group pull-right m-1 pagecenter"></div>
+             page-class-selected="btn-primary" depth="@Model.SelectedDepth"
+     sex="@Model.SelectedSex"
+     head-direction="@Model.SelectedHeadDir"
+     age-at-death="@Model.SelectedAgeAtDeath"
+     hair-color="@Model.SelectedHairColor"
+     wrapping="@Model.SelectedWrapping" class="btn-group pull-right m-1 pagecenter"  ></div>
     </div>

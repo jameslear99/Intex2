@@ -17,32 +17,49 @@ namespace Intex2.Controllers
         public IMummyProjectRepository repo;
         public HomeController(IMummyProjectRepository temp) => repo = temp;
         
-        public IActionResult DisplayList(string depth, string sex, string headdirection, string ageatdeath, string haircolor, string wrapping, int pageNum = 1)
+        [HttpGet]
+        public IActionResult DisplayList(string depth = "", string sex = "z", string headdirection = "z", string ageatdeath = "z", string haircolor = "z", string wrapping = "z", int pageNum = 1)
         {
-            int pageSize = 100;
-            if (depth != "U" && depth != "")
+            int totRecord = 0;
+            int pageSize = 50;
+            if (depth != "U" && depth != "" && depth != null)
             {
                 //this is how we pass multiple things into the index page so we can access both the db and pagination info
                 var x = new MummyViewModel
                 {
                     Mummies = repo.Mummies /*It is able to return correct ranges for numbers, currently can't handle b.Depth's of null, U, or ""*/
-                    .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1) || depth == null)
-                    .Where(b=> b.Sex == sex || sex == null)
-                    .Where(b=> b.Headdirection == headdirection || headdirection == null)
-                    .Where(b=> b.Ageatdeath == ageatdeath || ageatdeath == null)
-                    .Where(b=> b.Haircolor == haircolor || haircolor == null)
-                    .Where(b=> b.Wrapping == wrapping || wrapping == null)
+                    .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1))
+                    .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
                     .Skip((pageNum - 1) * pageSize)
-                    .OrderByDescending(b => Convert.ToDecimal(b.Depth))
                     .Take(pageSize),
+
+                    
 
                     PageInfo = new PageInfo
                     {
-                        TotalNumMummy = repo.Mummies.Count(),
+                        TotalNumMummy = repo.Mummies
+                        .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1))
+                        .Where(b => b.Sex == sex || sex == null || sex == "z")
+                        .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                        .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                        .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                        .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
+                        .Count(),
                         MummyPerPage = pageSize,
                         CurrentPage = pageNum
                     }
                 };
+                x.SelectedDepth = depth;
+                x.SelectedSex = sex;
+                x.SelectedHeadDir = headdirection;
+                x.SelectedAgeAtDeath = ageatdeath;
+                x.SelectedHairColor = haircolor;
+                x.SelectedWrapping = wrapping;
+
                 return View(x);
             }
             else if (depth == "")
@@ -51,21 +68,32 @@ namespace Intex2.Controllers
                 {
                     Mummies = repo.Mummies
                     .Skip((pageNum - 1) * pageSize)
-                    .Where(b => b.Sex == sex || sex == null)
-                    .Where(b => b.Headdirection == headdirection || headdirection == null)
-                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null)
-                    .Where(b => b.Haircolor == haircolor || haircolor == null)
-                    .Where(b => b.Wrapping == wrapping || wrapping == null)
-                    .OrderByDescending(b => b.Depth)
+                    .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
                     .Take(pageSize),
 
                     PageInfo = new PageInfo
                     {
-                        TotalNumMummy = repo.Mummies.Count(),
+                        TotalNumMummy = repo.Mummies
+                        .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
+                        .Count(),
                         MummyPerPage = pageSize,
                         CurrentPage = pageNum
                     }
                 };
+                x.SelectedDepth = depth;
+                x.SelectedSex = sex;
+                x.SelectedHeadDir = headdirection;
+                x.SelectedAgeAtDeath = ageatdeath;
+                x.SelectedHairColor = haircolor;
+                x.SelectedWrapping = wrapping;
                 return View(x);
             }
             else
@@ -73,18 +101,33 @@ namespace Intex2.Controllers
                 var x = new MummyViewModel
                 {
                     Mummies = repo.Mummies
-                    .Where(b => b.Depth == "U" || b.Depth == null || b.Depth == "")
+                    .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
                     .Skip((pageNum - 1) * pageSize)
-                    .OrderByDescending(b => b.Depth)
                     .Take(pageSize),
 
                     PageInfo = new PageInfo
                     {
-                        TotalNumMummy = repo.Mummies.Count(),
+                        TotalNumMummy = repo.Mummies
+                    .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
+                        .Count(),
                         MummyPerPage = pageSize,
                         CurrentPage = pageNum
                     }
                 };
+                x.SelectedDepth = depth;
+                x.SelectedSex = sex;
+                x.SelectedHeadDir = headdirection;
+                x.SelectedAgeAtDeath = ageatdeath;
+                x.SelectedHairColor = haircolor;
+                x.SelectedWrapping = wrapping;
                 return View(x);
             }
         }
@@ -124,22 +167,13 @@ namespace Intex2.Controllers
         }
         [Authorize]
         [HttpGet]
-        public IActionResult AddEntry(int id)
+        public IActionResult AddEntry()
         {
-
+            long LastId = repo.Mummies.Max(m => m.Id);
             var burialmain = repo.Mummies.ToList();
-            var textiles = repo.Textiles.ToList();
 
             ViewBag.Burialmain = burialmain;
-            ViewBag.Textiles = textiles;
-
-
-
-            /*var viewModel = new MummyViewModel
-            {
-                Mummies = repo.Mummies,
-                Textiles = repo.Textiles
-            };*/
+            ViewBag.LastId = LastId + 1;
             return View();
         }
         [Authorize]
@@ -170,7 +204,7 @@ namespace Intex2.Controllers
 
         [Authorize]
         [HttpGet]
-        public IActionResult EditBurialmain(int id)
+        public IActionResult EditBurialmain(long id)
         {
             var record = repo.GetById(id);
             return View(record);
@@ -194,8 +228,9 @@ namespace Intex2.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult DeleteEntry(Burialmain record)
+        public IActionResult DeleteEntry(long id)
         {
+            var record = repo.GetById(id);
             repo.DeleteRecord(record);
             return RedirectToAction("DisplayList");
         }
