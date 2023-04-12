@@ -421,7 +421,7 @@ h6 {
     }
 
     #hero h2 {
-        color: #fff;
+        color: white;
         margin-bottom: 20px;
         font-size: 48px;
         font-weight: 700;
@@ -430,7 +430,7 @@ h6 {
     #hero p {
         animation-delay: 0.4s;
         margin: 0 auto 30px auto;
-        color: #fff;
+        color: white;
     }
 
     #hero .carousel-inner .carousel-item {
@@ -441,13 +441,13 @@ h6 {
     #hero .carousel-inner .carousel-item,
     #hero .carousel-inner .active.carousel-item-start,
     #hero .carousel-inner .active.carousel-item-end {
-        opacity: 0.5;
+        opacity: 0;
     }
 
     #hero .carousel-inner .active,
     #hero .carousel-inner .carousel-item-next.carousel-item-start,
     #hero .carousel-inner .carousel-item-prev.carousel-item-end {
-        opacity: 0.5;
+        opacity: 1;
         transition: 0.5s;
     }
 

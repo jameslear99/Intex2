@@ -1,8 +1,10 @@
 ﻿@{
+    ViewData["Title"] = "Add Entry";
 }
 @model Burialmain
 <h1>Add an Entry</h1>
-<br /><br />
+<br />
+<br />
 <div class="grid-container form">
     <form method="post">
         <div asp-validation-summary="All"></div>
@@ -247,30 +249,30 @@
             </fieldset>
         </div>
         <br />
-        
-
-        
 
 
 
-            <br />
-            <fieldset class="form-group">
-                <legend>Upload Images</legend>
-                <div class="form-group col-md-3">
-                    <label asp-for="Photos">Photos:</label>
-                    <input asp-for="Photos" type="file" name="image" class="form-control" />
-                </div>
-                <div class="form-group col-md-3">
-                    <input type="submit" value="Upload" />
-                </div>
-                <div class="form-group col-md-3">
 
-                </div>
-                <div class="form-group col-md-3">
 
-                </div>
-            </fieldset>
-            <br /><br />
-            <button type="submit" class="btn btn-primary btn-large">Submit Entry</button>
-        </form>
-    </div>
+
+        <br />
+        <fieldset class="form-group">
+            <legend>Upload Images</legend>
+            <div class="form-group col-md-3">
+                <label asp-for="Photos">Photos:</label>
+                <input asp-for="Photos" type="file" name="image" class="form-control" />
+            </div>
+            <div class="form-group col-md-3">
+                <input type="submit" value="Upload" />
+            </div>
+            <div class="form-group col-md-3">
+
+            </div>
+            <div class="form-group col-md-3">
+
+            </div>
+        </fieldset>
+        <br /><br />
+        <button type="submit" class="btn btn-primary btn-large">Submit Entry</button>
+    </form>
+</div>
