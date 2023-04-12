@@ -17,21 +17,21 @@ namespace Intex2.Controllers
         public IMummyProjectRepository repo;
         public HomeController(IMummyProjectRepository temp) => repo = temp;
         
-        public IActionResult DisplayList(string depth, string sex, string headdirection, string ageatdeath, string haircolor, string wrapping, int pageNum = 1)
+        public IActionResult DisplayList(string depth = "", string sex = "z", string headdirection = "z", string ageatdeath = "z", string haircolor = "z", string wrapping = "z", int pageNum = 1)
         {
             int pageSize = 100;
-            if (depth != "U" && depth != "")
+            if (depth != "U" && depth != "" && depth != null)
             {
                 //this is how we pass multiple things into the index page so we can access both the db and pagination info
                 var x = new MummyViewModel
                 {
                     Mummies = repo.Mummies /*It is able to return correct ranges for numbers, currently can't handle b.Depth's of null, U, or ""*/
                     .Where(b => b.Depth != "U" && b.Depth != null && b.Depth != "" && Convert.ToDecimal(b.Depth) <= Convert.ToDecimal(depth) && Convert.ToDecimal(b.Depth) > (Convert.ToDecimal(depth) - 1))
-                    .Where(b=> b.Sex == sex || sex == null || sex == "z")
-                    .Where(b=> b.Headdirection == headdirection || headdirection == null || headdirection == "z")
-                    .Where(b=> b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
-                    .Where(b=> b.Haircolor == haircolor || haircolor == null || haircolor == "z")
-                    .Where(b=> b.Wrapping == wrapping || wrapping == null || wrapping == "z")
+                    .Where(b => b.Sex == sex || sex == null || sex == "z")
+                    .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
+                    .Where(b => b.Haircolor == haircolor || haircolor == null || haircolor == "z")
+                    .Where(b => b.Wrapping == wrapping || wrapping == null || wrapping == "z")
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize),
 
@@ -71,7 +71,6 @@ namespace Intex2.Controllers
                 var x = new MummyViewModel
                 {
                     Mummies = repo.Mummies
-                    .Where(b => b.Depth == "U" || b.Depth == null || b.Depth == "")
                     .Where(b => b.Sex == sex || sex == null || sex == "z")
                     .Where(b => b.Headdirection == headdirection || headdirection == null || headdirection == "z")
                     .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null || ageatdeath == "z")
