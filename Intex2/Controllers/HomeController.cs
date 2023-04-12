@@ -20,7 +20,7 @@ namespace Intex2.Controllers
         public IActionResult DisplayList(string depth, string sex, string headdirection, string ageatdeath, string haircolor, string wrapping, int pageNum = 1)
         {
             int pageSize = 100;
-            if (depth != "U" && depth != null && depth != "")
+            if (depth != "U" && depth != "")
             {
                 //this is how we pass multiple things into the index page so we can access both the db and pagination info
                 var x = new MummyViewModel
@@ -51,6 +51,11 @@ namespace Intex2.Controllers
                 {
                     Mummies = repo.Mummies
                     .Skip((pageNum - 1) * pageSize)
+                    .Where(b => b.Sex == sex || sex == null)
+                    .Where(b => b.Headdirection == headdirection || headdirection == null)
+                    .Where(b => b.Ageatdeath == ageatdeath || ageatdeath == null)
+                    .Where(b => b.Haircolor == haircolor || haircolor == null)
+                    .Where(b => b.Wrapping == wrapping || wrapping == null)
                     .OrderByDescending(b => b.Depth)
                     .Take(pageSize),
 
