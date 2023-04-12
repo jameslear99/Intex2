@@ -204,10 +204,10 @@ namespace Intex2.Controllers
 
         [Authorize]
         [HttpGet]
-        public IActionResult EditBurialmain(int id)
+        public IActionResult EditBurialmain(long id)
         {
             var record = repo.GetById(id);
-            return RedirectToAction("AddEntry", record);
+            return View(record);
         }
 
         [Authorize]

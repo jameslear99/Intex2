@@ -1,25 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Add Entry";
+    ViewData["Title"] = "Edit Entry";
 }
 @model Burialmain
+
+
 <h1>Add an Entry</h1>
 <br />
 <br />
 <div class="grid-container form">
     <form method="post">
         <div asp-validation-summary="All"></div>
-        <input asp-for="Id" type="hidden" value="@ViewBag.LastId" />
+        <input asp-for="Id" type="hidden" value="@Model.Id" />
         <div class="container bg-light rounded">
             <fieldset class="form-group ">
                 <legend>Burial Information</legend>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label asp-for="Burialid">Burial Id:</label>
-                        <input asp-for="Burialid" class="form-control" value=""/>
+                        <input asp-for="Burialid" class="form-control" readonly/>
                     </div>
                     <div class="form-group col-md-6">
                         <label asp-for="Burialnumber">Burial Number:</label>
-                        <input asp-for="Burialnumber" class="form-control" />
+                        <input asp-for="Burialnumber" class="form-control" readonly/>
                     </div>
                 </div>
             </fieldset>
