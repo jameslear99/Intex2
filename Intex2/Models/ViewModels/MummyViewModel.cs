@@ -19,6 +19,7 @@ namespace Intex2.Models.ViewModels
         public string SelectedAgeAtDeath { get; set; }
         public string SelectedHairColor { get; set; }
         public string SelectedWrapping { get; set; }
+        public long LastId { get; set; }
         /* public MummyViewModel(Intex2Context context)
          {
              Mummies = context.Burialmain;
