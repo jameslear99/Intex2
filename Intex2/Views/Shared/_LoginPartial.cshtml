@@ -3,9 +3,8 @@
 @inject UserManager<IdentityUser> UserManager
 
 
-    <div class="container">
-        <br /><br /><br /><br />
-        <ul>
+
+
             @if (SignInManager.IsSignedIn(User))
             {
                 <li>
@@ -26,6 +25,6 @@
                     <a class="nav-link scrollto" asp-area="Identity" asp-page="/Account/Login">Login</a>
                 </li>
             }
-        </ul>
-    </div>
+
+
  
