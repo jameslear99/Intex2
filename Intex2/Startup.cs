@@ -10,8 +10,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.ML.OnnxRuntime;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +22,13 @@ namespace Intex2
 {
     public class Startup
     {
+        private readonly IWebHostEnvironment _env;
+
+        public Startup(IWebHostEnvironment env)
+        {
+            _env = env;
+        }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -40,6 +49,11 @@ namespace Intex2
 
             //pagination services etc
             services.AddScoped<IMummyProjectRepository, EFMummyProjectRepository>();
+
+
+            // Load ONNX model into an InferenceSession
+            var modelPath = Path.Combine(_env.ContentRootPath, "Models", "model.onnx");
+            services.AddSingleton<InferenceSession>(new InferenceSession(modelPath));
 
             //Add cookie notifications
             services.Configure<CookiePolicyOptions>(options =>
