@@ -20,22 +20,7 @@ namespace Intex2.Models.ViewModels
         public string SelectedHairColor { get; set; }
         public string SelectedWrapping { get; set; }
         public long LastId { get; set; }
-        /* public MummyViewModel(Intex2Context context)
-         {
-             Mummies = context.Burialmain;
-             Textiles = context.Textile;
-             BridgeTable = context.BurialmainTextile;
-             Photodata = context.Photodata;
-             PhotoBridge = context.PhotodataTextile;
+        public CombinedPhotoInfo CombinedPhotoInfo { get; set; }
 
-             // Join the Burialmain and Textile tables using the BurialmainTextile bridge table
-             var joinedData = from mummy in Mummies
-                              join bridge in BridgeTable on mummy.Id equals bridge.MainBurialmainid
-                              join textile in Textiles on bridge.MainTextileid equals textile.Id
-                              select new { mummy, textile };
-
-             // Set the joined data as the Mummies property
-             Mummies = joinedData.Select(j => j.mummy);
-         }*/
     }
 }
