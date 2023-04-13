@@ -99,14 +99,14 @@
                                 <form method="post" asp-controller="Home" asp-action="DeleteEntry" id="delete-form">
                                     <input type="hidden" name="Id" value="@m.Id" />
                                     <!--Return URL <input type="hidden" name="returnUrl" value=" at model ReturnUrl"-->
-                                    <button type="button" class="btn btn-outline-danger" onclick="confirmDelete">Remove</button>
+                                    <button type="button" class="btn btn-outline-danger" id="delete-button">Remove</button>
                                 </form>
                             </div>
                             <div class="col-1">
                                 <form method="get" asp-controller="Home" asp-action="EditBurialmain" id="edit-form">
                                     <input type="hidden" name="Id" value="@m.Id" />
 
-                                    <button type="button" class="btn btn-outline-warning" onclick="commenceEdit">Edit</button>
+                                    <button type="button" class="btn btn-outline-warning" id="start-edit">Edit</button>
                                 </form>
                             </div>
                             <div class="col-2">

@@ -2,35 +2,33 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-function confirmDelete() {
-    var confirmed = confirm("Are you sure you want to delete this entry?");
-    if (confirmed) {
-        // User confirmed, submit the form
-        document.getElementById("delete-form").submit();
-    } else {
-        // User canceled, do nothing
-        return false;
-    }
-}
+document.addEventListener("DOMContentLoaded", function (event) {
 
-function confirmEdit() {
-    var confirmed = confirm("Are you sure you'd like to submit these changes?");
-    if (confirmed) {
-        // User confirmed, submit the form
-        document.getElementById("edit-form").submit();
-    } else {
-        // User canceled, do nothing
-        return false;
+    function confirmDelete() {
+        var confirmed = confirm("Are you sure you want to delete this entry?");
+        if (confirmed) {
+            // User confirmed, submit the form
+            document.getElementById("delete-form").submit();
+        } else {
+            // User canceled, do nothing
+            event.preventDefault();
+            return false;
+        }
     }
-}
 
-function commenceEdit() {
-    var confirmed = confirm("Are you sure you'd like to edit this entry?");
-    if (confirmed) {
-        // User confirmed, submit the form
-        document.getElementById("edit-form").submit();
-    } else {
-        // User canceled, do nothing
-        return false;
+    document.getElementById("delete-button").addEventListener("click", confirmDelete);
+
+    function commenceEdit() {
+        var confirmed = confirm("Are you sure you'd like to edit this entry?");
+        if (confirmed) {
+            // User confirmed, submit the form
+            document.getElementById("edit-form").submit();
+        } else {
+            // User canceled, do nothing
+            event.preventDefault();
+            return false;
+        }
     }
-}
+
+    document.getElementById("start-edit").addEventListener("click", commenceEdit);
+});
