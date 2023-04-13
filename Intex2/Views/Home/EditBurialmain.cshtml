@@ -2,11 +2,25 @@
     ViewData["Title"] = "Edit Entry";
 }
 @model Burialmain
+<!-- ======= Breadcrumbs ======= -->
+<br />
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container-fluid">
 
+        <div class="row justify-content-center">
+            <br />
+            <div class="col-xl-10">
+                <ol>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Home" asp-action="DisplayList">Return to List</a></li>
+                </ol>
+                <h2>Edit Entry</h2>
+            </div>
+        </div>
 
+    </div>
+</section><!-- End Breadcrumbs -->
 <h1>Add an Entry</h1>
-<br />
-<br />
 <div class="grid-container form">
     <form method="post">
         <div asp-validation-summary="All"></div>
@@ -17,11 +31,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label asp-for="Burialid">Burial Id:</label>
-                        <input asp-for="Burialid" class="form-control" readonly/>
+                        <input asp-for="Burialid" class="form-control" readonly />
                     </div>
                     <div class="form-group col-md-6">
                         <label asp-for="Burialnumber">Burial Number:</label>
-                        <input asp-for="Burialnumber" class="form-control" readonly/>
+                        <input asp-for="Burialnumber" class="form-control" readonly />
                     </div>
                 </div>
             </fieldset>

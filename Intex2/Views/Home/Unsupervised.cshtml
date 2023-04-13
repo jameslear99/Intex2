@@ -1,7 +1,82 @@
 ﻿@{
     ViewData["Title"] = "Unsupervised";
 }
-<br /><br /><br /><br />
+
+<!-- ======= Breadcrumbs ======= -->
+<br />
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            <br />
+            <div class="col-xl-10">
+                <ol>
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li>Unsupervised Models</li>
+                </ol>
+                <h2>Unsupervised Models</h2>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Breadcrumbs -->
+
 <div class="container">
-    <h1>Unsupervised Model</h1>
+    <h1>Unsupervised Models</h1>
+
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-5">
+            <h3>Adult</h3>
+            <p>Here is some information</p>
+        </div>
+        <div class="col-5">
+            <iframe src="~/lib/mygraph_adult.html" width="500" height="300"></iframe>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+    <br /><br />
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-5">
+            <h3>Age at Death</h3>
+            <p>Here is some information</p>
+        </div>
+        <div class="col-5">
+            <iframe src="~/lib/mygraph.html" width="500" height="300"></iframe>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+    <br /><br />
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-5">
+            <h3>Mummy Sex</h3>
+            <p>Here is some information</p>
+        </div>
+        <div class="col-5">
+            <iframe src="~/lib/mygraph_sex.html" width="500" height="300"></iframe>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+    <br /><br />
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-5">
+            <h3>Textile Colors</h3>
+            <p>Here is some information</p>
+        </div>
+        <div class="col-5">
+            <iframe src="~/lib/mygraph_colors.html" width="500" height="300"></iframe>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
 </div>

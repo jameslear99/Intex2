@@ -2,92 +2,106 @@
     ViewData["Title"] = "Details";
 }
 @model Burialmain
-<br />
-<br />
-<br />
-<br />
-<div class="container">
+    <!-- ======= Breadcrumbs ======= -->
+    <br />
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container-fluid">
 
-    <div class="card card-outline-primary m-2 p-2">
-        <div class="bg-light p-1">
-            <h4>
-                Mummy Details for Burial #@Model.Burialnumber
-            </h4>
+            <div class="row justify-content-center">
+                <br />
+                <div class="col-xl-10">
+                    <ol>
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-controller="Home" asp-action="DisplayList">Return to List</a></li>
+                    </ol>
+                    <h2>Details</h2>
+                </div>
+            </div>
+
         </div>
-        <br />
-        <div class="container">
-            <h6 class="row">General Information</h6>
-            <div class="row">
-                <div class="col-3">Date of Excavation: @Model.Dateofexcavation</div>
-                <div class="col-3">Fieldbook Year: @Model.Fieldbookexcavationyear</div>
-                <div class="col-3">Data Expert: @Model.Dataexpertinitials</div>
-                <div class="col-3">Recorder: @Model.Excavationrecorder</div>
+    </section><!-- End Breadcrumbs -->
+    <div class="container">
 
+        <div class="card card-outline-primary m-2 p-2">
+            <div class="bg-light p-1">
+                <h4>
+                    Mummy Details for Burial #@Model.Burialnumber
+                </h4>
             </div>
             <br />
-            <h6 class="row">Geographical Location</h6>
-            <div class="row">Area: @Model.Area</div>
-            <div class="row">
-                <div class="col-3">North South: @Model.Northsouth</div>
-                <div class="col-3">Square North South: @Model.Squarenorthsouth</div>
-                <div class="col-3">East West: @Model.Eastwest</div>
-                <div class="col-3">Square East West: @Model.Squareeastwest</div>
+            <div class="container">
+                <h6 class="row">General Information</h6>
+                <div class="row">
+                    <div class="col-3">Date of Excavation: @Model.Dateofexcavation</div>
+                    <div class="col-3">Fieldbook Year: @Model.Fieldbookexcavationyear</div>
+                    <div class="col-3">Data Expert: @Model.Dataexpertinitials</div>
+                    <div class="col-3">Recorder: @Model.Excavationrecorder</div>
 
-            </div>
-            <br />
-            <h6 class="row">Direction to Head</h6>
-            <div class="row">
-                <div class="col-3">South: @Model.Southtohead</div>
-                <div class="col-3">West: @Model.Westtohead</div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
-            </div>
-            <br />
-            <h6 class="row">Direction to Feet</h6>
-            <div class="row">
-                <div class="col-3">South: @Model.Southtofeet</div>
-                <div class="col-3">West: @Model.Westtofeet</div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
-            </div>
-            <br />
-            <h6 class="row">Measurement</h6>
-            <div class="row">
-                <div class="col-3">Depth: @Model.Depth</div>
-                <div class="col-3">Length: @Model.Length</div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
-            </div>
-            <br />
-            <h6 class="row">Body Details</h6>
-            <div class="row">
-                <div class="col-2">Sex: @Model.Sex</div>
-                <div class="col-2">Age at Death: @Model.Ageatdeath</div>
-                <div class="col-2">Adult: @Model.Adultsubadult</div>
-                <div class="col-2">Hair Color: @Model.Haircolor</div>
-                <div class="col-2">Hair: @Model.Hair</div>
+                </div>
+                <br />
+                <h6 class="row">Geographical Location</h6>
+                <div class="row">Area: @Model.Area</div>
+                <div class="row">
+                    <div class="col-3">North South: @Model.Northsouth</div>
+                    <div class="col-3">Square North South: @Model.Squarenorthsouth</div>
+                    <div class="col-3">East West: @Model.Eastwest</div>
+                    <div class="col-3">Square East West: @Model.Squareeastwest</div>
 
+                </div>
+                <br />
+                <h6 class="row">Direction to Head</h6>
+                <div class="row">
+                    <div class="col-3">South: @Model.Southtohead</div>
+                    <div class="col-3">West: @Model.Westtohead</div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                </div>
+                <br />
+                <h6 class="row">Direction to Feet</h6>
+                <div class="row">
+                    <div class="col-3">South: @Model.Southtofeet</div>
+                    <div class="col-3">West: @Model.Westtofeet</div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                </div>
+                <br />
+                <h6 class="row">Measurement</h6>
+                <div class="row">
+                    <div class="col-3">Depth: @Model.Depth</div>
+                    <div class="col-3">Length: @Model.Length</div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                </div>
+                <br />
+                <h6 class="row">Body Details</h6>
+                <div class="row">
+                    <div class="col-2">Sex: @Model.Sex</div>
+                    <div class="col-2">Age at Death: @Model.Ageatdeath</div>
+                    <div class="col-2">Adult: @Model.Adultsubadult</div>
+                    <div class="col-2">Hair Color: @Model.Haircolor</div>
+                    <div class="col-2">Hair: @Model.Hair</div>
+
+                </div>
+                <br />
+                <h6 class="row">Preservation Info</h6>
+                <div class="row">
+                    <div class="col-3">Face Bundle: @Model.Facebundles</div>
+                    <div class="col-3">Wrapping: @Model.Wrapping</div>
+                    <div class="col-3">Preservation: @Model.Preservation</div>
+                    <div class="col-3">Burial Materials: @Model.Burialmaterials</div>
+                </div>
+                <div class="row">
+                    <form method="get" asp-controller="Home" asp-action="AddTextile">
+                        <input type="hidden" name="Id" value="Model.Id" />
+
+                        <button type="submit" class="btn btn-sm">Add Textile</button>
+                    </form>
+                </div>
+
+
+
+
+                <a>Add Textile</a>
             </div>
-            <br />
-            <h6 class="row">Preservation Info</h6>
-            <div class="row">
-                <div class="col-3">Face Bundle: @Model.Facebundles</div>
-                <div class="col-3">Wrapping: @Model.Wrapping</div>
-                <div class="col-3">Preservation: @Model.Preservation</div>
-                <div class="col-3">Burial Materials: @Model.Burialmaterials</div>
-            </div>
-            <div class="row">
-                <form method="get" asp-controller="Home" asp-action="AddTextile">
-                    <input type="hidden" name="Id" value="Model.Id" />
-
-                    <button type="submit" class="btn btn-sm">Add Textile</button>
-                </form>
-            </div>
-
-
-
-
-            <a>Add Textile</a>
         </div>
     </div>
-</div>

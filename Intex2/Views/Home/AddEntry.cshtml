@@ -2,277 +2,292 @@
     ViewData["Title"] = "Add Entry";
 }
 @model Burialmain
-<h1>Add an Entry</h1>
-<br />
-<br />
-<div class="grid-container form">
-    <form method="post">
-        <div asp-validation-summary="All"></div>
-        <input asp-for="Id" type="hidden" value="@ViewBag.LastId" />
-        <div class="container bg-light rounded">
-            <fieldset class="form-group ">
-                <legend>Burial Information</legend>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label asp-for="Burialid">Burial Id:</label>
-                        <input asp-for="Burialid" class="form-control" value=""/>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label asp-for="Burialnumber">Burial Number:</label>
-                        <input asp-for="Burialnumber" class="form-control" />
-                    </div>
+    <!-- ======= Breadcrumbs ======= -->
+    <br />
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container-fluid">
+
+            <div class="row justify-content-center">
+                <br />
+                <div class="col-xl-10">
+                    <ol>
+                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li>Add an Entry</li>
+                    </ol>
+                    <h2>Add an Entry</h2>
                 </div>
-            </fieldset>
+            </div>
+
         </div>
-        <br />
-        <div class="container bg-light rounded">
-            <fieldset class="form-group ">
-                <legend>Mummy Information: General</legend>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Sex">Sex:</label>
-                        <input asp-for="Sex" class="form-control" />
+    </section><!-- End Breadcrumbs -->
+    <div class="grid-container form">
+        <form method="post">
+            <div asp-validation-summary="All"></div>
+            <input asp-for="Id" type="hidden" value="@ViewBag.LastId" />
+            <div class="container bg-light rounded">
+                <fieldset class="form-group ">
+                    <legend>Burial Information</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Burialid">Burial Id:</label>
+                            <input asp-for="Burialid" class="form-control" value="" />
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="Burialnumber">Burial Number:</label>
+                            <input asp-for="Burialnumber" class="form-control" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <br />
+            <div class="container bg-light rounded">
+                <fieldset class="form-group ">
+                    <legend>Mummy Information: General</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Sex">Sex:</label>
+                            <input asp-for="Sex" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Haircolor">Hair Color:</label>
+                            <input asp-for="Haircolor" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Hair">Hair:</label>
+                            <input asp-for="Hair" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Ageatdeath">Age At Death:</label>
+                            <input asp-for="Ageatdeath" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label asp-for="Adultsubadult">Age Range:</label>
+                            <input asp-for="Adultsubadult" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label asp-for="Facebundles">Face Bundles:</label>
+                            <input asp-for="Facebundles" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-4">
+
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <br />
+
+            <div class="container bg-light rounded">
+                <fieldset class="form-group">
+                    <legend>Mummy Information: General</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Preservation">Preservation:</label>
+                            <input asp-for="Preservation" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Fieldbookpage">Fieldbook Page:</label>
+                            <input asp-for="Fieldbookpage" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Goods">Goods:</label>
+                            <input asp-for="Goods" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Text">Text:</label>
+                            <input asp-for="Text" class="form-control" />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <br />
+            <div class="container bg-light rounded">
+                <fieldset class="form-group">
+                    <legend>Location/Geography</legend>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Area">Area:</label>
+                            <input asp-for="Area" class="form-control" /><br />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Headdirection">Head Direction:</label>
+                            <input asp-for="Headdirection" class="form-control" /><br />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Depth">Depth:</label>
+                            <input asp-for="Depth" class="form-control" /><br />
+                        </div>
+
+                        <div class="form-group col-md-3">
+
+                        </div>
                     </div>
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Haircolor">Hair Color:</label>
-                        <input asp-for="Haircolor" class="form-control" />
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Northsouth">North South:</label>
+                            <input asp-for="Northsouth" class="form-control" /><br />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Eastwest">East West:</label>
+                            <input asp-for="Eastwest" class="form-control" /><br />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Westtohead">West to Head:</label>
+                            <input asp-for="Westtohead" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Southtohead">South to Head:</label>
+                            <input asp-for="Southtohead" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Westtofeet">West tofeet:</label>
+                            <input asp-for="Westtofeet" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Southtofeet">Southtofeet:</label>
+                            <input asp-for="Southtofeet" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Squarenorthsouth">Squarenorthsouth:</label>
+                            <input asp-for="Squarenorthsouth" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Squareeastwest">Squareeastwest:</label>
+                            <input asp-for="Squareeastwest" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+
+                        </div>
+
+                        <div class="form-group col-md-3">
+
+                        </div>
                     </div>
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Hair">Hair:</label>
-                        <input asp-for="Hair" class="form-control" />
+                </fieldset>
+            </div>
+            <br />
+            <div class="container bg-light rounded">
+                <fieldset class="form-group">
+                    <legend>Excavation Information</legend>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Fieldbookexcavationyear">Fieldbookexcavationyear:</label>
+                            <input asp-for="Fieldbookexcavationyear" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Shaftnumber">Shaftnumber:</label>
+                            <input asp-for="Shaftnumber" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Clusternumber">Clusternumber:</label>
+                            <input asp-for="Clusternumber" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Excavationrecorder">Excavationrecorder:</label>
+                            <input asp-for="Excavationrecorder" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Samplescollected">Samplescollected:</label>
+                            <input asp-for="Samplescollected" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Wrapping">Wrapping:</label>
+                            <input asp-for="Wrapping" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Length">Length:</label>
+                            <input asp-for="Length" class="form-control" />
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label asp-for="Burialmaterials">Burialmaterials:</label>
+                            <input asp-for="Burialmaterials" class="form-control" />
+                        </div>
                     </div>
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Ageatdeath">Age At Death:</label>
-                        <input asp-for="Ageatdeath" class="form-control" />
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label asp-for="Dataexpertinitials">Dataexpertinitials:</label>
+                            <input asp-for="Dataexpertinitials" class="form-control" /><br />
+                        </div>
+
+                        <div class="form-group col-md-3">
+
+                        </div>
+
+                        <div class="form-group col-md-3">
+
+                        </div>
+
+                        <div class="form-group col-md-3">
+
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label asp-for="Adultsubadult">Age Range:</label>
-                        <input asp-for="Adultsubadult" class="form-control" />
-                    </div>
+                </fieldset>
+            </div>
+            <br />
 
-                    <div class="form-group col-md-4">
-                        <label asp-for="Facebundles">Face Bundles:</label>
-                        <input asp-for="Facebundles" class="form-control" />
-                    </div>
 
-                    <div class="form-group col-md-4">
 
-                    </div>
-                </div>
-            </fieldset>
-        </div>
 
-        <br />
 
-        <div class="container bg-light rounded">
+
+            <br />
             <fieldset class="form-group">
-                <legend>Mummy Information: General</legend>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Preservation">Preservation:</label>
-                        <input asp-for="Preservation" class="form-control" />
-                    </div>
+                <legend>Upload Images</legend>
+                <div class="form-group col-md-3">
+                    <label asp-for="Photos">Photos:</label>
+                    <input asp-for="Photos" type="file" name="image" class="form-control" />
+                </div>
+                <div class="form-group col-md-3">
+                    <input type="submit" value="Upload" />
+                </div>
+                <div class="form-group col-md-3">
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Fieldbookpage">Fieldbook Page:</label>
-                        <input asp-for="Fieldbookpage" class="form-control" />
-                    </div>
+                </div>
+                <div class="form-group col-md-3">
 
-                    <div class="form-group col-md-3">
-                        <label asp-for="Goods">Goods:</label>
-                        <input asp-for="Goods" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Text">Text:</label>
-                        <input asp-for="Text" class="form-control" />
-                    </div>
                 </div>
             </fieldset>
-        </div>
-        <br />
-        <div class="container bg-light rounded">
-            <fieldset class="form-group">
-                <legend>Location/Geography</legend>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Area">Area:</label>
-                        <input asp-for="Area" class="form-control" /><br />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Headdirection">Head Direction:</label>
-                        <input asp-for="Headdirection" class="form-control" /><br />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Depth">Depth:</label>
-                        <input asp-for="Depth" class="form-control" /><br />
-                    </div>
-
-                    <div class="form-group col-md-3">
-
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Northsouth">North South:</label>
-                        <input asp-for="Northsouth" class="form-control" /><br />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Eastwest">East West:</label>
-                        <input asp-for="Eastwest" class="form-control" /><br />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                    </div>
-
-                    <div class="form-group col-md-3">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Westtohead">West to Head:</label>
-                        <input asp-for="Westtohead" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Southtohead">South to Head:</label>
-                        <input asp-for="Southtohead" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Westtofeet">West tofeet:</label>
-                        <input asp-for="Westtofeet" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Southtofeet">Southtofeet:</label>
-                        <input asp-for="Southtofeet" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Squarenorthsouth">Squarenorthsouth:</label>
-                        <input asp-for="Squarenorthsouth" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Squareeastwest">Squareeastwest:</label>
-                        <input asp-for="Squareeastwest" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-
-                    </div>
-
-                    <div class="form-group col-md-3">
-
-                    </div>
-                </div>
-
-            </fieldset>
-        </div>
-        <br />
-        <div class="container bg-light rounded">
-            <fieldset class="form-group">
-                <legend>Excavation Information</legend>
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Fieldbookexcavationyear">Fieldbookexcavationyear:</label>
-                        <input asp-for="Fieldbookexcavationyear" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Shaftnumber">Shaftnumber:</label>
-                        <input asp-for="Shaftnumber" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Clusternumber">Clusternumber:</label>
-                        <input asp-for="Clusternumber" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Excavationrecorder">Excavationrecorder:</label>
-                        <input asp-for="Excavationrecorder" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Samplescollected">Samplescollected:</label>
-                        <input asp-for="Samplescollected" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Wrapping">Wrapping:</label>
-                        <input asp-for="Wrapping" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Length">Length:</label>
-                        <input asp-for="Length" class="form-control" />
-                    </div>
-
-                    <div class="form-group col-md-3">
-                        <label asp-for="Burialmaterials">Burialmaterials:</label>
-                        <input asp-for="Burialmaterials" class="form-control" />
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <label asp-for="Dataexpertinitials">Dataexpertinitials:</label>
-                        <input asp-for="Dataexpertinitials" class="form-control" /><br />
-                    </div>
-
-                    <div class="form-group col-md-3">
-
-                    </div>
-
-                    <div class="form-group col-md-3">
-
-                    </div>
-
-                    <div class="form-group col-md-3">
-
-                    </div>
-                </div>
-            </fieldset>
-        </div>
-        <br />
-
-
-
-
-
-
-        <br />
-        <fieldset class="form-group">
-            <legend>Upload Images</legend>
-            <div class="form-group col-md-3">
-                <label asp-for="Photos">Photos:</label>
-                <input asp-for="Photos" type="file" name="image" class="form-control" />
-            </div>
-            <div class="form-group col-md-3">
-                <input type="submit" value="Upload" />
-            </div>
-            <div class="form-group col-md-3">
-
-            </div>
-            <div class="form-group col-md-3">
-
-            </div>
-        </fieldset>
-        <br /><br />
-        <button type="submit" class="btn btn-primary btn-large">Submit Entry</button>
-    </form>
-</div>
+            <br /><br />
+            <button type="submit" class="btn btn-primary btn-large">Submit Entry</button>
+        </form>
+    </div>
