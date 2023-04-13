@@ -16,6 +16,8 @@ namespace Intex2.Models
         IQueryable<Textile> Textiles { get; }
         IQueryable<BurialmainTextile> BridgeTable { get; }
         IEnumerable<Textile> GetAllTextile();
+        IQueryable<Photodata> Photodata { get; }
+        IQueryable<PhotodataTextile> PhotoBridge { get; }
         Textile GetTextileById(int id);
         void AddRecord(Textile record);
         void UpdateRecord(Textile record);

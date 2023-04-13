@@ -15,13 +15,13 @@ namespace Intex2.Models.ViewModels
         public IEnumerable<PhotodataTextile> PhotoBridge { get; set; }
         public Dictionary<int, List<string>> FilenamesByBurialMainId { get; set; }
 
-        public CombinedPhotoInfo(Intex2Context context)
+        public CombinedPhotoInfo(IQueryable<Burialmain> burialmain, IQueryable<Textile> textiles, IQueryable<BurialmainTextile> bridgetable, IQueryable<Photodata> photodata, IQueryable<PhotodataTextile> photobridge)
         {
-            Mummies = context.Burialmain;
-            Textiles = context.Textile;
-            BridgeTable = context.BurialmainTextile;
-            Photodata = context.Photodata;
-            PhotoBridge = context.PhotodataTextile;
+            Mummies = burialmain;
+            Textiles = textiles;
+            BridgeTable = bridgetable;
+            Photodata = photodata;
+            PhotoBridge = photobridge;
 
             // Join the Burialmain, Textile, Photodata, and PhotodataTextile tables
             var joinedData = from mummy in Mummies

@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Details";
 }
-@model Burialmain
+@model MummyViewModel
     <!-- ======= Breadcrumbs ======= -->
     <br />
     <section id="breadcrumbs" class="breadcrumbs">
@@ -178,3 +178,12 @@
             </div>
         </div>
     </div>
+
+@foreach (var b in Model.CombinedPhotoInfo.FilenamesByBurialMainId){
+
+<p>@b.Key</p>
+                @foreach(var filename in b.Value)
+                {
+                    <p>@filename</p>
+                }
+}

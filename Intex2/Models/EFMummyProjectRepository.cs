@@ -14,6 +14,9 @@ namespace Intex2.Models
         public IQueryable<Burialmain> Mummies => context.Burialmain;
         public IQueryable<Textile> Textiles => context.Textile;
         public IQueryable<BurialmainTextile> BridgeTable => context.BurialmainTextile;
+        public IQueryable<Photodata> Photodata => context.Photodata;
+        public IQueryable<PhotodataTextile> PhotoBridge => context.PhotodataTextile;
+
         public IEnumerable<Burialmain> GetAll()
         {
             return context.Burialmain.ToList();

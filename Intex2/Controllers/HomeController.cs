@@ -15,7 +15,12 @@ namespace Intex2.Controllers
     public class HomeController : Controller
     {
         public IMummyProjectRepository repo;
-        public HomeController(IMummyProjectRepository temp) => repo = temp;
+       
+
+        public HomeController(IMummyProjectRepository temp)
+        {
+            repo = temp;
+        }
         
         [HttpGet]
         public IActionResult DisplayList(string depth = "", string sex = "z", string headdirection = "z", string ageatdeath = "z", string haircolor = "z", string wrapping = "z", int pageNum = 1)
@@ -133,30 +138,38 @@ namespace Intex2.Controllers
         }
         [HttpGet]
         public IActionResult Details(long Id)
-        {
-
-            var x = new MummyViewModel
-            {
-                Mummies = repo.Mummies,
-                BridgeTable = repo.BridgeTable,
-                Textiles = repo.Textiles
-            };
-            var Bridge = x.BridgeTable.Where(b => b.MainBurialmainid == Id).Select(b => b.MainTextileid);
-            long BridgeId = (long)Bridge.FirstOrDefault();
-            var textile = x.Textiles.Where(t => t.Id == BridgeId).Select(t => t);
-            var Data = x.Mummies.Where(m => m.Id == Id);
-            var Record = Data.FirstOrDefault();
+        { 
+           
 
 
-            string[] Filename = new string[0];
-            long[] PhotoIds2 = new long[0];
-            ViewBag.Record = Record;
+                    var x = new MummyViewModel
+                    {
+                        Mummies = repo.Mummies,
+                        BridgeTable = repo.BridgeTable,
+                        Textiles = repo.Textiles,
+                        CombinedPhotoInfo = new CombinedPhotoInfo(repo.Mummies, repo.Textiles, repo.BridgeTable, repo.Photodata, repo.PhotoBridge)
+                    };
+                    var Bridge = x.BridgeTable.Where(b => b.MainBurialmainid == Id).Select(b => b.MainTextileid);
+                    long BridgeId = (long)Bridge.FirstOrDefault();
+                    var textile = x.Textiles.Where(t => t.Id == BridgeId).Select(t => t);
+                    var Data = x.Mummies.Where(m => m.Id == Id);
+                    var Record = Data.FirstOrDefault();
+
+
+                    string[] Filename = new string[0];
+                    long[] PhotoIds2 = new long[0];
+                    ViewBag.Record = Record;
 
 
 
 
-            return View();
-        }
+                    return View();
+
+
+            }
+          
+            
+        
 
         public IActionResult Privacy()
         {
