@@ -7,7 +7,6 @@
 <br />
 <section id="breadcrumbs" class="breadcrumbs">
     <div class="container-fluid">
-
         <div class="row justify-content-center">
             <br />
             <div class="col-xl-10">
@@ -18,9 +17,7 @@
                 <h2>Display List</h2>
             </div>
         </div>
-
     </div>
-
 </section><!-- End Breadcrumbs -->
 <section id="services" class="services">
     <div class="container-fluid">
@@ -107,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-                  </div>
+             </div>
         </form>
     </div>
 </section>
@@ -124,7 +121,6 @@
                 <a class="btn btn-secondary" asp-controller="Home" asp-action="AddEntry">Add a Mummy</a>
             </div>
         </div>
-
     </div>
     <br /><br />
 
@@ -174,10 +170,8 @@
                 </div>
             </div>
         </div>
-        <br /><br />
-
-<<<<<<< HEAD
     }
+        <br /><br />
     <div page-model="@Model.PageInfo" page-action="DisplayList" page-classes-enabled="true"
          page-class="btn" page-class-normal="btn-outline-dark"
          page-class-selected="btn-primary" depth="@Model.SelectedDepth"
@@ -185,9 +179,11 @@
          head-direction="@Model.SelectedHeadDir"
          age-at-death="@Model.SelectedAgeAtDeath"
          hair-color="@Model.SelectedHairColor"
-         wrapping="@Model.SelectedWrapping" class="btn-group pull-right m-1 pagecenter"></div>
-</div>
-=======
+         wrapping="@Model.SelectedWrapping" class="btn-group pull-right m-1 pagecenter">
+
+    </div>
+
+
         @foreach (Burialmain m in Model.Mummies)
         {
             <div class="container">
@@ -245,5 +241,3 @@
      age-at-death="@Model.SelectedAgeAtDeath"
      hair-color="@Model.SelectedHairColor"
      wrapping="@Model.SelectedWrapping" class="btn-group pull-right m-1 pagecenter"  ></div>
-    </div>
->>>>>>> 22c5332b4fd8b8bfd835935128242810e4ab583c
