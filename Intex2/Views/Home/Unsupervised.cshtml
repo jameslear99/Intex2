@@ -22,16 +22,27 @@
 </section><!-- End Breadcrumbs -->
 
 <div class="container">
-    <h1>Unsupervised Models</h1>
-
+    <br /><br />
+    <div class="section-title">
+        <h1 class="title">Unsupervised Models</h1>
+        <p class="description">The Fag el-Gamous research team has a working hypothesis that burial practices in an ancient cemetery changed over time. To explore this theory, we made four graphs. The graphs show information about the age, sex, and burial depth of the mummies. We also looked at the colors of the textiles used in the burials. We think that the burial practices may have been different in the past, with people being buried at different depths or in different ways. We need more information to confirm our theory.</p>
+    </div>
     <div class="row">
-        <div class="col-1">
+        <div class="col-3">
+            <h3 class="card-title">Age of Mummy</h3>
+            <h6 class="description">Key:</h6>
+            <ul class="description">
+                <li>Navy (adult_yn 1): Adult</li>
+                <li>Pink (adult_yn 2): Child</li>
+            </ul>
         </div>
-        <div class="col-5">
-            <h3>Adult</h3>
-            <p>Here is some information</p>
+        <div class="col-4">
+            <div>
+                
+                <p class="description">The age of mummies found at different geographical locations varies, with the majority of mummies buried at a depth of 2.5-4 meters being adults. Children are only found buried past the depth of 2.5 meters. Geographical location does not seem to affect whether there are adults or children buried. However, the depth of burial does raise the question of why only adults were buried at this cemetery early on.</p>
+            </div>
         </div>
-        <div class="col-5">
+        <div class="col-3">
             <iframe src="~/lib/mygraph_adult.html" width="500" height="300"></iframe>
         </div>
         <div class="col-1">
@@ -39,44 +50,70 @@
     </div>
     <br /><br />
     <div class="row">
-        <div class="col-1">
+        <div class="col-3">
+            <h3 class="card-title">Age at Death</h3>
+            <h6 class="description">Key:</h6>
+            <ul class="description">
+                <li>age_cat 1: Adult</li>
+                <li>age_cat 2: Unknown</li>
+                <li>age_cat 3: Child</li>
+                <li>age_cat 4: Infant</li>
+            </ul>
         </div>
-        <div class="col-5">
-            <h3>Age at Death</h3>
-            <p>Here is some information</p>
+        <div class="col-4">
+            
+            <p class="description">The graph depicts the age at death of individuals and shares similarities with the previous graph. The data shows that any depth greater than 2.5 meters is associated with adults' age at death. Notably, square north-south 150 and square east-west 50 exhibit a consistent pattern of adult age at death with a scarce number of children or other age groups found at this location. This observation could potentially hold archaeological significance, warranting further investigation.</p>
         </div>
-        <div class="col-5">
+        <div class="col-3">
             <iframe src="~/lib/mygraph.html" width="500" height="300"></iframe>
         </div>
         <div class="col-1">
         </div>
     </div>
     <br /><br />
-    <div class="row">
-        <div class="col-1">
-        </div>
-        <div class="col-5">
-            <h3>Mummy Sex</h3>
-            <p>Here is some information</p>
-        </div>
-        <div class="col-5">
-            <iframe src="~/lib/mygraph_sex.html" width="500" height="300"></iframe>
-        </div>
-        <div class="col-1">
-        </div>
-    </div>
+          <div class="row">
+              <div class="col-3">
+                  <h3 class="card-title">Sex</h3>
+                  <h6 class="description">Key:</h6>
+                  <ul class="description">
+                      <li>sex_mf 1: Female</li>
+                      <li>sex_mf 2: Male</li>
+                  </ul>
+              </div>
+              <div class="col-4">
+                  
+                  <p class="description">The graph represents the sex distribution of the excavated mummies at various geographical locations and depths. Interestingly, depth does not seem to have a strong correlation with the sex of the mummies. However, it is noteworthy that all mummies buried within the geographical range of square east-west 40 to 50 are female. This observation raises the possibility of a hypothesis that particular locations within the cemetery were designated for female burials. Further research and analysis would be necessary to confirm this theory.</p>
+              </div>
+              <div class="col-3">
+                  <iframe src="~/lib/mygraph_sex.html" width="500" height="300"></iframe>
+              </div>
+              <div class="col-1">
+              </div>
+          </div>
     <br /><br />
-    <div class="row">
-        <div class="col-1">
-        </div>
-        <div class="col-5">
-            <h3>Textile Colors</h3>
-            <p>Here is some information</p>
-        </div>
-        <div class="col-5">
-            <iframe src="~/lib/mygraph_colors.html" width="500" height="300"></iframe>
-        </div>
-        <div class="col-1">
-        </div>
-    </div>
+          <div class="row">
+              <div class="col-3">
+                  <h3 class="card-title">Textile Colors</h3>
+                  <h6 class="description">Key:</h6>
+                  <ul class="description">
+                      <li>color-class 1: Red</li>
+                      <li>color-class 2: Green</li>
+                      <li>color-class 3: White</li>
+                      <li>color-class 4: Brown</li>
+                      <li>color-class 5: Undyed</li>
+                      <li>color-class 6: Purple</li>
+                      <li>color-class 7: Blue</li>
+                      <li>color-class 8: Yellow</li>
+                      <li>color-class 0: Unique color</li>
+                  </ul>
+              </div>
+              <div class="col-4">
+                  <p class="description">The graph presented is based on a limited number of records, which would not typically yield significant findings. However, it was included due to a slight pattern observed in the available data, suggesting a soft hypothesis that burial depth may have influenced the color of textiles used in burial rituals. For instance, the color green was only present in mummies buried at depths shallower than one meter. Although the data was insufficient to establish the significance of the trend, it suggests that there may be observable patterns that could emerge with larger data volumes.</p>
+              </div>
+              <div class="col-3">
+                  <iframe src="~/lib/mygraph_colors.html" width="500" height="300"></iframe>
+              </div>
+              <div class="col-1">
+              </div>
+          </div>
 </div>
