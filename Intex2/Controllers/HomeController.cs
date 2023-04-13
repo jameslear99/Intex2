@@ -143,10 +143,13 @@ namespace Intex2.Controllers
             };
             var Bridge = x.BridgeTable.Where(b => b.MainBurialmainid == Id).Select(b=> b.MainTextileid);
             long BridgeId = (long)Bridge.FirstOrDefault();
-            var textile = x.Textiles.SingleOrDefault(t => t.Id == BridgeId);
+            var textile = x.Textiles.Where(t => t.Id == BridgeId).Select(t => t);
             var Data = x.Mummies.Where(m => m.Id == Id);
             var Record = Data.FirstOrDefault();
-            return View(Record);
+            string[] Filename = new string[0];
+            long[] PhotoIds2 = new long[0];
+            ViewBag.Record = Record;
+            return View();
         }
 
         public IActionResult Privacy()
