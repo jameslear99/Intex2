@@ -87,7 +87,7 @@ namespace Intex2
                 options.UseNpgsql(connectionString));
 
             services.AddSingleton<InferenceSession>(
-                new InferenceSession("Models/MODEL.onnx")
+                new InferenceSession("Models/MODEL3.onnx")
             );
         }
         

@@ -28,8 +28,8 @@ namespace Intex2.Controllers
             {
                 NamedOnnxValue.CreateFromTensor("float_input", data.AsTensor())
             });
-            Tensor<float> score = result.First().AsTensor<float>();
-            var prediction = new Prediction { PredictedValue = score.First() * 100000 };
+            Tensor<string> score = result.First().AsTensor<string>();
+            var prediction = new Prediction { PredictedValue = score.First()};
             result.Dispose();
             return Ok(prediction);
         }
