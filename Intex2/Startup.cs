@@ -80,7 +80,7 @@ namespace Intex2
                 options.UseNpgsql(connectionString));
 
             services.AddSingleton<InferenceSession>(
-                new InferenceSession("Models/random_forest_model.onnx")
+                new InferenceSession("Models/MODELLL.onnx")
                 );
         }
 

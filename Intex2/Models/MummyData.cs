@@ -15,7 +15,6 @@ namespace Intex2.Models
         public float goods { get; set; }
         public float haircolor { get; set; }
         public float ageatdeath { get; set; }
-        public float clusternumber { get; set; }
         public float depth { get; set; }
         public float length { get; set; }
 
@@ -23,10 +22,10 @@ namespace Intex2.Models
         {
             float[] data = new float[]
             {
-                sex, headdirection, adultsubadult, preservation, goods, haircolor, ageatdeath, clusternumber, depth, length
+                sex, headdirection, adultsubadult, preservation, goods, haircolor, ageatdeath, depth, length
             };
 
-            int[] dimensions = new int[] { 1, 10 };
+            int[] dimensions = new int[] { 1, 9 };
             return new DenseTensor<float>(data, dimensions);
         }
 

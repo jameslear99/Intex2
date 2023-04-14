@@ -10,8 +10,8 @@ using Intex2.Models;
 
 namespace Intex2.Controllers
 {
-    [Route("/score")]
     [ApiController]
+    [Route("/score")]
     public class APIController : ControllerBase
     {
         private InferenceSession _session;
@@ -25,7 +25,7 @@ namespace Intex2.Controllers
         {
             var result = _session.Run(new List<NamedOnnxValue>
             { 
-                NamedOnnxValue.CreateFromTensor("input_data_type" , data.AsTensor())
+                NamedOnnxValue.CreateFromTensor("float_input" , data.AsTensor())
             });
 
             Tensor<float> score = result.First().AsTensor<float>();
