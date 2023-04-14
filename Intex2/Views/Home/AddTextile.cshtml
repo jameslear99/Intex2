@@ -22,9 +22,9 @@
         </div>
     </section><!-- End Breadcrumbs -->
     <div class="container">
-        <br /><br /><br /><br />
         <form method="post">
-            <div asp-validation-summary="All"></div>
+            <br /><br />
+            <!--<div asp-validation-summary="All"></div>-->
             <input asp-for="Id" type="hidden" />
             <div class="container bg-light rounded">
                 <fieldset class="form-group">
@@ -73,6 +73,8 @@
                     </div>
                 </fieldset>
             </div>
-            <button type="submit" asp-controller="Home" asp-action="AddTextile">Submit</button>
+            <button class="btn btn-success" type="submit" asp-controller="Home" asp-action="AddTextile">Submit</button>
+           
         </form>
+        <br /><br /><br /><br /><br />
     </div>

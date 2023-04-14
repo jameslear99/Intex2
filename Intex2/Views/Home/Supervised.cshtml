@@ -17,10 +17,10 @@
         </div>
     </div>
 </section><!-- End Breadcrumbs -->
-<div class="container">
+<div class="container-md">
     <br /><br />
     <div class="section-title">
-        <h1 class="title">Unsupervised Models</h1>
+        <h1 class="title">Wrapping Prediction</h1>
         <p class="description">
             Researchers can use this tool to input
             information about an excavated mummy to receive predictions about
@@ -28,107 +28,109 @@
         </p>
     </div>
 </div>
-<div class="bg-light rounded">
-    <form>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="sex">Sex</label>
-                <select class="custom-select my-1 mr-sm-2" id="sex" name="sex">
-                    <!--The empty values are for if we don't want to filter by that one right now when we submit-->
-                    <option value=""></option>
-                    <option value="1">F</option>
-                    <option value="2">M</option>
-                    <option value="3">Other</option>
-                    <option value="0">Null</option>
-                </select>
+<div class="container-md">
+    <div class="container bg-light rounded">
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="sex">Sex</label>
+                    <select class="custom-select my-1 mr-sm-2" id="sex" name="sex">
+                        <!--The empty values are for if we don't want to filter by that one right now when we submit-->
+                        <option value=""></option>
+                        <option value="1">F</option>
+                        <option value="2">M</option>
+                        <option value="3">Other</option>
+                        <option value="0">Null</option>
+                    </select>
+                </div>
+                <div class="from-group col-md-4">
+                    <label for="ageatdeath">Age at Death</label>
+                    <select class="custom-select my-1 mr-sm-2" id="ageatdeath" name="ageatdeath">
+                        <option value=""></option>
+                        <option value="1">A</option>
+                        <option value="2">N</option>
+                        <option value="3">C</option>
+                        <option value="4">I</option>
+                        <option value="5">Other</option>
+                        <option value="0">Null</option>
+                    </select>
+                </div>
+                <div class="from-group col-md-4">
+                    <label for="adultsubadult">Adult sub Adult</label>
+                    <select class="custom-select my-1 mr-sm-2" id="adultsubadult" name="adultsubadult">
+                        <option value=""></option>
+                        <option value="1">A</option>
+                        <option value="2">C</option>
+                        <option value="3">Other</option>
+                        <option value="0">Null</option>
+                    </select>
+                </div>
             </div>
-            <div class="from-group col-md-4">
-                <label for="ageatdeath">Age at Death</label>
-                <select class="custom-select my-1 mr-sm-2" id="ageatdeath" name="ageatdeath">
-                    <option value=""></option>
-                    <option value="1">A</option>
-                    <option value="2">N</option>
-                    <option value="3">C</option>
-                    <option value="4">I</option>
-                    <option value="5">Other</option>
-                    <option value="0">Null</option>
-                </select>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="headdirection">Head Direction</label>
+                    <select class="custom-select my-1 mr-sm-2" id="headdirection" name="headdirection">
+                        <option value=""></option>
+                        <option value="1">N</option>
+                        <option value="2">E</option>
+                        <option value="3">S</option>
+                        <option value="4">W</option>
+                        <option value="5">Other</option>
+                        <option value="0">Null</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="haircolor">Hair Color </label>
+                    <select class="custom-select my-1 mr-sm-2" id="haircolor" name="haircolor">
+                        <option value=""></option>
+                        <option value="1">B</option>
+                        <option value="2">K</option>
+                        <option value="3">R</option>
+                        <option value="4">Other</option>
+                        <option value="0">Null</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="preservation">Preservation</label>
+                    <select class="custom-select my-1 mr-sm-2" id="preservation" name="preservation">
+                        <option value=""></option>
+                        <option value="1">W</option>
+                        <option value="2">B</option>
+                        <option value="3">S</option>
+                        <option value="4">Deteriorated</option>
+                        <option value="5">Very disturbed</option>
+                        <option value="6">Poor</option>
+                        <option value="7">Badly preserved</option>
+                        <option value="8">Other</option>
+                        <option value="0">Null</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="goods">Goods</label>
+                    <select class="custom-select my-1 mr-sm-2" id="goods" name="goods">
+                        <option value=""></option>
+                        <option value="1">Y</option>
+                        <option value="2">Other</option>
+                        <option value="0">Null</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="depth">Depth</label>
+                    <input type="text" class="form-control" id="depth" />
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="length">Length</label>
+                    <input type="text" class="form-control" id="length" />
+                </div>
             </div>
-            <div class="from-group col-md-4">
-                <label for="adultsubadult">Adult sub Adult</label>
-                <select class="custom-select my-1 mr-sm-2" id="adultsubadult" name="adultsubadult">
-                    <option value=""></option>
-                    <option value="1">A</option>
-                    <option value="2">C</option>
-                    <option value="3">Other</option>
-                    <option value="0">Null</option>
-                </select>
+            <div class="row justify-content-center">
+                <div class="form-group col-md-12 ">
+                    <button type="button" id="predict" class="btn btn-outline-secondary">Predict Wrapping</button>
+                </div>
             </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <label for="headdirection">Head Direction</label>
-                <select class="custom-select my-1 mr-sm-2" id="headdirection" name="headdirection">
-                    <option value=""></option>
-                    <option value="1">N</option>
-                    <option value="2">E</option>
-                    <option value="3">S</option>
-                    <option value="4">W</option>
-                    <option value="5">Other</option>
-                    <option value="0">Null</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="haircolor">Hair Color </label>
-                <select class="custom-select my-1 mr-sm-2" id="haircolor" name="haircolor">
-                    <option value=""></option>
-                    <option value="1">B</option>
-                    <option value="2">K</option>
-                    <option value="3">R</option>
-                    <option value="4">Other</option>
-                    <option value="0">Null</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="preservation">Preservation</label>
-                <select class="custom-select my-1 mr-sm-2" id="preservation" name="preservation">
-                    <option value=""></option>
-                    <option value="1">W</option>
-                    <option value="2">B</option>
-                    <option value="3">S</option>
-                    <option value="4">Deteriorated</option>
-                    <option value="5">Very disturbed</option>
-                    <option value="6">Poor</option>
-                    <option value="7">Badly preserved</option>
-                    <option value="8">Other</option>
-                    <option value="0">Null</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="goods">Goods</label>
-                <select class="custom-select my-1 mr-sm-2" id="goods" name="goods">
-                    <option value=""></option>
-                    <option value="1">Y</option>
-                    <option value="2">Other</option>
-                    <option value="0">Null</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="depth">Depth</label>
-                <input type="text" class="form-control" id="depth" />
-            </div>
-            <div class="form-group col-md-4">
-                <label for="length">Length</label>
-                <input type="text" class="form-control" id="length" />
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="form-group col-md-12 ">
-                <button type="button" id="predict" class="btn btn-outline-secondary" >Predict Wrapping</button>
-            </div>
-        </div>
-    </form>
-</div>
-<div class="container">
+        </form>
+    </div>
+    <div class="justify-content-center">
     <p id="predictedValue"></p>
+</div>
 </div>

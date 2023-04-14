@@ -96,9 +96,10 @@
                 <div class="col-3">Burial Materials: @ViewBag.Record.Burialmaterials</div>
             </div>
             <div class="row">
+                <br /><br />
                 <form method="get" asp-controller="Home" asp-action="AddTextile">
                     <input type="hidden" name="Id" value="ViewBag.Record.Id" />
-                    <button type="submit">Add Textile</button>
+                    <button class="btn btn-success" type="submit">Add Textile</button>
                 </form>
                 </div>
                 
