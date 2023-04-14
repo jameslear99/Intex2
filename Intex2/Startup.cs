@@ -30,6 +30,13 @@ namespace Intex2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //authdb stuff
+
+
+
+
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
@@ -73,7 +80,7 @@ namespace Intex2
             .AddUserSecrets<Startup>()
             .Build();
 
-            string connectionString = config.GetConnectionString("MyDatabase");
+            string connectionString = "Server=awseb-e-x7xq7utebu-stack-awsebrdsdatabase-i4ic5b8kpqde.c5apg3h0ciwb.us-east-1.rds.amazonaws.com;Database=ebdb;User Id=postgres;Password=admin123";
 
             services.AddDbContext<Intex2Context>(options =>
                 options.UseNpgsql(connectionString));
