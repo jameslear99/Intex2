@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.ML.OnnxRuntime;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using System;
 using System.Collections.Generic;
@@ -77,8 +78,12 @@ namespace Intex2
 
             services.AddDbContext<Intex2Context>(options =>
                 options.UseNpgsql(connectionString));
-        }
 
+            services.AddSingleton<InferenceSession>(
+                new InferenceSession("Models/MODEL.onnx")
+            );
+        }
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
