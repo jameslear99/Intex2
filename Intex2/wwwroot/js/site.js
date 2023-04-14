@@ -31,4 +31,48 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     document.getElementById("start-edit").addEventListener("click", commenceEdit);
+
+   
+
 });
+
+
+
+
+ document.getElementById("predict").addEventListener("click", predictValue);
+
+
+    function predictValue() {
+        var sex = document.getElementById("sex").value;
+        var ageatdeath = document.getElementById("ageatdeath").value;
+        var adultsubadult = document.getElementById("adultsubadult").value;
+        var headdirection = document.getElementById("headdirection").value;
+        var haircolor = document.getElementById("haircolor").value;
+        var preservation = document.getElementById("preservation").value;
+        var goods = document.getElementById("goods").value;
+        var depth = document.getElementById("depth").value;
+        var length = document.getElementById("length").value;
+
+        depth = parseFloat(depth);
+        var prediction = ""
+
+        if (depth < .75) {
+            prediction = "Full or nearly full wrapping remains"
+        }
+
+        else if (depth < 1.3) {
+            prediction = "Partial wrapping remains"
+        }
+
+        else if (depth < 4) {
+            prediction = "Bones and/or only partial remnants of wrapping remains"
+        }
+
+        else {
+            prediction = "Unknown"
+        }
+
+        document.getElementById("predictedValue").innerHTML = (prediction);
+    }
+
+    
