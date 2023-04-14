@@ -18,130 +18,75 @@
                 </div>
             </div>
 
-<<<<<<< HEAD
+
         </div>
     </section><!-- End Breadcrumbs -->
     <div class="container">
-=======
-    <div class="card card-outline-primary m-2 p-2">
-        <div class="bg-light p-1">
-            <h4>
-                Mummy Details for Burial #@ViewBag.Record.Burialnumber
-            </h4>
-        </div>
-        <br />
-        <div class="container">
-            <h6 class="row">General Information</h6>
-            <div class="row">
-                <div class="col-3">Date of Excavation: @ViewBag.Record.Dateofexcavation</div>
-                <div class="col-3">Fieldbook Year: @ViewBag.Record.Fieldbookexcavationyear</div>
-                <div class="col-3">Data Expert: @ViewBag.Record.Dataexpertinitials</div>
-                <div class="col-3">Recorder: @ViewBag.Record.Excavationrecorder</div>
->>>>>>> 22c5332b4fd8b8bfd835935128242810e4ab583c
+
+
 
         <div class="card card-outline-primary m-2 p-2">
             <div class="bg-light p-1">
                 <h4>
-                    Mummy Details for Burial #@Model.Burialnumber
+                    Mummy Details for Burial #@ViewBag.Record.Burialnumber
                 </h4>
             </div>
             <br />
-<<<<<<< HEAD
+
             <div class="container">
                 <h6 class="row">General Information</h6>
                 <div class="row">
-                    <div class="col-3">Date of Excavation: @Model.Dateofexcavation</div>
-                    <div class="col-3">Fieldbook Year: @Model.Fieldbookexcavationyear</div>
-                    <div class="col-3">Data Expert: @Model.Dataexpertinitials</div>
-                    <div class="col-3">Recorder: @Model.Excavationrecorder</div>
+                    <div class="col-3">Date of Excavation: @ViewBag.Record.Dateofexcavation</div>
+                    <div class="col-3">Fieldbook Year: @ViewBag.Record.Fieldbookexcavationyear</div>
+                    <div class="col-3">Data Expert: @ViewBag.Record.Dataexpertinitials</div>
+                    <div class="col-3">Recorder: @ViewBag.Record.Excavationrecorder</div>
 
                 </div>
                 <br />
                 <h6 class="row">Geographical Location</h6>
-                <div class="row">Area: @Model.Area</div>
+                <div class="row">Area: @ViewBag.Record.Area</div>
                 <div class="row">
-                    <div class="col-3">North South: @Model.Northsouth</div>
-                    <div class="col-3">Square North South: @Model.Squarenorthsouth</div>
-                    <div class="col-3">East West: @Model.Eastwest</div>
-                    <div class="col-3">Square East West: @Model.Squareeastwest</div>
+                    <div class="col-3">North South: @ViewBag.Record.Northsouth</div>
+                    <div class="col-3">Square North South: @ViewBag.Record.Squarenorthsouth</div>
+                    <div class="col-3">East West: @ViewBag.Record.Eastwest</div>
+                    <div class="col-3">Square East West: @ViewBag.Record.Squareeastwest</div>
 
                 </div>
                 <br />
                 <h6 class="row">Direction to Head</h6>
                 <div class="row">
-                    <div class="col-3">South: @Model.Southtohead</div>
-                    <div class="col-3">West: @Model.Westtohead</div>
+                    <div class="col-3">South: @ViewBag.Record.Southtohead</div>
+                    <div class="col-3">West: @ViewBag.Record.Westtohead</div>
                     <div class="col-3"></div>
                     <div class="col-3"></div>
                 </div>
                 <br />
                 <h6 class="row">Direction to Feet</h6>
                 <div class="row">
-                    <div class="col-3">South: @Model.Southtofeet</div>
-                    <div class="col-3">West: @Model.Westtofeet</div>
+                    <div class="col-3">South: @ViewBag.Record.Southtofeet</div>
+                    <div class="col-3">West: @ViewBag.Record.Westtofeet</div>
                     <div class="col-3"></div>
                     <div class="col-3"></div>
                 </div>
                 <br />
                 <h6 class="row">Measurement</h6>
                 <div class="row">
-                    <div class="col-3">Depth: @Model.Depth</div>
-                    <div class="col-3">Length: @Model.Length</div>
+                    <div class="col-3">Depth: @ViewBag.Record.Depth</div>
+                    <div class="col-3">Length: @ViewBag.Record.Length</div>
                     <div class="col-3"></div>
                     <div class="col-3"></div>
                 </div>
                 <br />
                 <h6 class="row">Body Details</h6>
                 <div class="row">
-                    <div class="col-2">Sex: @Model.Sex</div>
-                    <div class="col-2">Age at Death: @Model.Ageatdeath</div>
-                    <div class="col-2">Adult: @Model.Adultsubadult</div>
-                    <div class="col-2">Hair Color: @Model.Haircolor</div>
-                    <div class="col-2">Hair: @Model.Hair</div>
-=======
-            <h6 class="row">Geographical Location</h6>
-            <div class="row">Area: @ViewBag.Record.Area</div>
-            <div class="row">
-                <div class="col-3">North South: @ViewBag.Record.Northsouth</div>
-                <div class="col-3">Square North South: @ViewBag.Record.Squarenorthsouth</div>
-                <div class="col-3">East West: @ViewBag.Record.Eastwest</div>
-                <div class="col-3">Square East West: @ViewBag.Record.Squareeastwest</div>
+                    <div class="col-2">Sex: @ViewBag.Record.Sex</div>
+                    <div class="col-2">Age at Death: @ViewBag.Record.Ageatdeath</div>
+                    <div class="col-2">Adult: @ViewBag.Record.Adultsubadult</div>
+                    <div class="col-2">Hair Color: @ViewBag.Record.Haircolor</div>
+                    <div class="col-2">Hair: @ViewBag.Record.Hair</div>
 
-            </div>
-            <br />
-            <h6 class="row">Direction to Head</h6>
-            <div class="row">
-                <div class="col-3">South: @ViewBag.Record.Southtohead</div>
-                <div class="col-3">West: @ViewBag.Record.Westtohead</div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
-            </div>
-            <br />
-            <h6 class="row">Direction to Feet</h6>
-            <div class="row">
-                <div class="col-3">South: @ViewBag.Record.Southtofeet</div>
-                <div class="col-3">West: @ViewBag.Record.Westtofeet</div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
-            </div>
-            <br />
-            <h6 class="row">Measurement</h6>
-            <div class="row">
-                <div class="col-3">Depth: @ViewBag.Record.Depth</div>
-                <div class="col-3">Length: @ViewBag.Record.Length</div>
-                <div class="col-3"></div>
-                <div class="col-3"></div>
-            </div>
-            <br />
-            <h6 class="row">Body Details</h6>
-            <div class="row">
-                <div class="col-2">Sex: @ViewBag.Record.Sex</div>
-                <div class="col-2">Age at Death: @ViewBag.Record.Ageatdeath</div>
-                <div class="col-2">Adult: @ViewBag.Record.Adultsubadult</div>
-                <div class="col-2">Hair Color: @ViewBag.Record.Haircolor</div>
-                <div class="col-2">Hair: @ViewBag.Record.Hair</div>
-
-            </div>
+            
+                </div>
             <br />
             <h6 class="row">Preservation Info</h6>
             <div class="row">
@@ -153,28 +98,10 @@
             <div class="row">
                 <form method="get" asp-controller="Home" asp-action="AddTextile">
                     <input type="hidden" name="Id" value="ViewBag.Record.Id" />
+                    <button type="submit">Add Textile</button>
                 </form>
                 </div>
-                <br />
-                <h6 class="row">Preservation Info</h6>
-                <div class="row">
-                    <div class="col-3">Face Bundle: @Model.Facebundles</div>
-                    <div class="col-3">Wrapping: @Model.Wrapping</div>
-                    <div class="col-3">Preservation: @Model.Preservation</div>
-                    <div class="col-3">Burial Materials: @Model.Burialmaterials</div>
-                </div>
-                <div class="row">
-                    <form method="get" asp-controller="Home" asp-action="AddTextile">
-                        <input type="hidden" name="Id" value="Model.Id" />
-
-                        <button type="submit" class="btn btn-sm">Add Textile</button>
-                    </form>
-                </div>
-
-
-
-
-                <a>Add Textile</a>
+                
             </div>
         </div>
     </div>
