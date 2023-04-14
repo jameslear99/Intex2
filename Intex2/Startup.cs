@@ -16,7 +16,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using MySql.Data.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
 namespace Intex2
 {
     public class Startup
@@ -39,7 +40,7 @@ namespace Intex2
 
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
+                options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
