@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
 using Intex2.Data;
+using System.Web;
 
 namespace Intex2.Controllers
 {
@@ -22,7 +23,7 @@ namespace Intex2.Controllers
         }
 
         [HttpPost]
-        public ActionResult Score(MummyData data)
+        public ActionResult Score([FromBody] MummyData data)
         {
             var result = _session.Run(new List<NamedOnnxValue>
             {
@@ -30,8 +31,11 @@ namespace Intex2.Controllers
             });
             Tensor<string> score = result.First().AsTensor<string>();
             var prediction = new Prediction { PredictedValue = score.First()};
+            var output = MyApi.GenerateOutput(data.sex_, data.headdirection_, data.adultsubadult_, data.preservation_, data.goods_, data.haircolor_, data.ageatdeath_, data.depth, data.length);
             result.Dispose();
-            return Ok(prediction);
+            return Json(new {output });
         }
+
+
     }
 }

@@ -18,6 +18,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
+using Newtonsoft.Json.Serialization;
 namespace Intex2
 {
     public class Startup
@@ -28,6 +29,7 @@ namespace Intex2
         }
 
         public IConfiguration Configuration { get; }
+        public object SerializerSettings { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -86,7 +88,7 @@ namespace Intex2
 
             services.AddDbContext<Intex2Context>(options =>
                 options.UseNpgsql(connectionString));
-
+            // call onnx file
             services.AddSingleton<InferenceSession>(
                 new InferenceSession("Models/MODEL4.onnx")
             );
